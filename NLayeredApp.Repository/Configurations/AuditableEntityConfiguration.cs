@@ -8,10 +8,10 @@ public abstract class AuditableEntityConfiguration<TEntity> : IEntityTypeConfigu
 {
     public virtual void Configure(EntityTypeBuilder<TEntity> builder)
     {
-        builder.Property(c => c.CreatedBy)
+        builder.Property(e => e.CreatedBy)
             .HasMaxLength(100);
 
-        builder.Property(c => c.LastModifiedBy)
+        builder.Property(e => e.LastModifiedBy)
             .HasMaxLength(100);
     }
 }
