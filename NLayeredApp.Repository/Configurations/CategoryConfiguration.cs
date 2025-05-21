@@ -9,6 +9,8 @@ public class CategoryConfiguration : AuditableEntityConfiguration<Category>
     public override void Configure(EntityTypeBuilder<Category> builder)
     {
         base.Configure(builder);
+
+        builder.HasKey(c => c.Id);
         
         builder.Property(c => c.Name)
             .IsRequired()

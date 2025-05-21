@@ -8,6 +8,8 @@ public class FeatureTypeConfiguration : IEntityTypeConfiguration<FeatureType>
 {
     public void Configure(EntityTypeBuilder<FeatureType> builder)
     {
+        builder.HasKey(ft => ft.Id);
+        
         builder.Property(ft => ft.Name)
             .IsRequired()
             .HasMaxLength(100);
