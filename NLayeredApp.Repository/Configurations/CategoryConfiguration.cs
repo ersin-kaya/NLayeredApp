@@ -4,12 +4,10 @@ using NLayeredApp.Core.Entities;
 
 namespace NLayeredApp.Repository.Configurations;
 
-public class CategoryConfiguration : AuditableEntityConfiguration<Category>
+public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 {
-    public override void Configure(EntityTypeBuilder<Category> builder)
+    public void Configure(EntityTypeBuilder<Category> builder)
     {
-        base.Configure(builder);
-
         builder.HasKey(c => c.Id);
         
         builder.Property(c => c.Name)
@@ -24,5 +22,11 @@ public class CategoryConfiguration : AuditableEntityConfiguration<Category>
         
         builder.HasIndex(c => c.Name)
             .IsUnique();
+        
+        builder.Property(e => e.CreatedBy)
+            .HasMaxLength(100);
+
+        builder.Property(e => e.LastModifiedBy)
+            .HasMaxLength(100);
     }
 }
