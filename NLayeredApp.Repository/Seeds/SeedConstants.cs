@@ -12,14 +12,14 @@ public static class SeedConstants
         public const bool IsNotRequired = false;
     }
     
-    public enum Category
+    public enum CategoryIds
     {
         Electronics = 1,
         Clothing = 2,
         HomeAndLiving = 3
     }
     
-    public enum FeatureType
+    public enum FeatureTypeIds
     {
         Color = 1,
         Size = 2,
@@ -30,7 +30,7 @@ public static class SeedConstants
         ScreenSize = 7
     }
     
-    public static class Features
+    public static class FeatureIds
     {
         public static class ElectronicsColors
         {
@@ -73,7 +73,7 @@ public static class SeedConstants
         }
     }
     
-    public static class Products
+    public static class ProductIds
     {
         public const int GalaxyS25 = 1;
         public const int GalaxyS24 = 2;
