@@ -116,14 +116,14 @@ public static class SeedConstants
                 Gray = 42
             }
         
-            public static class Materials
+            public enum MaterialIds
             {
-                public const int Wood = 43;
-                public const int Metal = 44;
-                public const int Plastic = 45;
-                public const int Glass = 46;
-                public const int Ceramic = 47;
-            } 
+                Wood = 43,
+                Metal = 44,
+                Plastic = 45,
+                Glass = 46,
+                Ceramic = 47
+            }
         }
     }
     

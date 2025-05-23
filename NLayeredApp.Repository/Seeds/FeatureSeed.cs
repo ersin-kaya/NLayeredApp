@@ -280,31 +280,31 @@ public static class FeatureSeed
 
             // Home and Living - Materials
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Materials.Wood,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Wood,
                 "Wood",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Materials.Metal,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Metal,
                 "Metal",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Materials.Plastic,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Plastic,
                 "Plastic",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Materials.Glass,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Glass,
                 "Glass",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Materials.Ceramic,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Ceramic,
                 "Ceramic",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material

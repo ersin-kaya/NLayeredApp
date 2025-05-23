@@ -142,7 +142,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.Bookshelf,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material,
-                SeedConstants.FeatureIds.HomeAndLiving.Materials.Wood
+                (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Wood
             ),
             
             // Dining Table Set
@@ -156,7 +156,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.DiningTable,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material,
-                SeedConstants.FeatureIds.HomeAndLiving.Materials.Ceramic
+                (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Ceramic
             ),
             
             // LED Floor Lamp
@@ -170,7 +170,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.LedFloorLamp,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material,
-                SeedConstants.FeatureIds.HomeAndLiving.Materials.Metal
+                (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Metal
             )
         );
     }
