@@ -138,10 +138,10 @@ public static class SeedConstants
         
         public const int PoloShirt = 7;
         public const int BlueDenimJean = 8;
-        public const int SportsShoe = 9;
+        public const int RunningShoes = 9;
         
         public const int DiningTable = 10;
-        public const int FloorLamp = 11;
+        public const int LedFloorLamp = 11;
         public const int Bookshelf = 12;
     }
 }
