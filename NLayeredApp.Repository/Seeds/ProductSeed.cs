@@ -76,9 +76,9 @@ public static class ProductSeed
                 (int)SeedConstants.CategoryIds.Clothing
             ),
             SeedHelpers.CreateProduct(
-                SeedConstants.ProductIds.SportsShoe,
-                "Sports Shoe",
-                "Sports shoe for daily use",
+                SeedConstants.ProductIds.RunningShoes,
+                "Running Shoes",
+                "High-quality running shoes designed for daily training and comfort",
                 899.99m,
                 100,
                 (int)SeedConstants.CategoryIds.Clothing
@@ -102,7 +102,7 @@ public static class ProductSeed
                 (int)SeedConstants.CategoryIds.HomeAndLiving
             ),
             SeedHelpers.CreateProduct(
-                SeedConstants.ProductIds.FloorLamp,
+                SeedConstants.ProductIds.LedFloorLamp,
                 "LED Floor Lamp",
                 "Modern adjustable LED floor lamp",
                 299.99m,
