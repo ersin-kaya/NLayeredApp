@@ -32,53 +32,109 @@ public static class SeedConstants
     
     public static class FeatureIds
     {
-        public static class ElectronicsColors
+        public static class Electronics
         {
-            public const int Black = 1;
-            public const int White = 2;
-            public const int Silver = 3;
-        }
+            public static class Colors
+            {
+                public const int Black = 1;
+                public const int White = 2;
+                public const int Silver = 3;
+            }
             
-        public static class StorageOptions
-        {
-            public const int Gb64 = 4;
-            public const int Gb128 = 5;
-            public const int Gb256 = 6;
-            public const int Gb512 = 7;
-        }
+            public static class StorageOptions
+            {
+                public const int Gb64 = 4;
+                public const int Gb128 = 5;
+                public const int Gb256 = 6;
+                public const int Gb512 = 7;
+            }
             
-        public static class MemoryOptions
-        {
-            public const int Gb4 = 8;
-            public const int Gb8 = 9;
-            public const int Gb16 = 10;
-            public const int Gb32 = 11;
-        }
+            public static class MemoryOptions
+            {
+                public const int Gb4 = 8;
+                public const int Gb8 = 9;
+                public const int Gb16 = 10;
+                public const int Gb32 = 11;
+            }
             
-        public static class ClothingColors
-        {
-            public const int Red = 12;
-            public const int Blue = 13;
-            public const int Green = 14;
-            public const int Yellow = 15;
-        }
+            public static class Processors
+            {
+                public const int AmdRyzen5 = 12;
+                public const int AmdRyzen7 = 13;
+                public const int AmdRyzen9 = 14;
+            }
             
-        public static class ClothingSizes
+            public static class ScreenSizes
+            {
+                public const int Inch5_5 = 15;
+                public const int Inch6_1 = 16;
+                public const int Inch13_3 = 17;
+                public const int Inch15_6 = 18;
+                public const int Inch24 = 19;
+                public const int Inch27 = 20;
+            }
+        }
+
+        public static class Clothing
         {
-            public const int Xs = 16;
-            public const int S = 17;
-            public const int M = 18;
-            public const int L = 19;
-            public const int Xl = 20;
+            public static class Colors
+            {
+                public const int Red = 21;
+                public const int Blue = 22;
+                public const int Green = 23;
+                public const int Yellow = 24;
+            }
+            
+            public static class Sizes
+            {
+                public const int Xs = 25;
+                public const int S = 26;
+                public const int M = 27;
+                public const int L = 28;
+                public const int Xl = 29;
+            }
+
+            public static class Materials
+            {
+                public const int Cotton = 30;
+                public const int Polyester = 31;
+                public const int Wool = 32;
+                public const int Denim = 33;
+                public const int Silk = 34;
+                public const int Leather = 35;
+                public const int FauxLeather = 36;
+                public const int Linen = 37;
+                public const int Viscose = 38;
+            }
+        }
+
+        public static class HomeAndLiving
+        {
+            public static class Colors
+            {
+                public const int Beige = 39;
+                public const int White = 40;
+                public const int Brown = 41;
+                public const int Gray = 42;
+            }
+        
+            public static class Materials
+            {
+                public const int Wood = 43;
+                public const int Metal = 44;
+                public const int Plastic = 45;
+                public const int Glass = 46;
+                public const int Ceramic = 47;
+            } 
         }
     }
     
     public static class ProductIds
     {
-        public const int GalaxyS25 = 1;
-        public const int GalaxyS24 = 2;
-        public const int PoloShirt = 3;
-        public const int DenimJeans = 4;
-        public const int SportsShoes = 5;
+        public const int GalaxyS25 = 48;
+        public const int GalaxyS24 = 49;
+        public const int PoloShirt = 50;
+        public const int DenimJeans = 51;
+        public const int SportsShoes = 52;
     }
 }
