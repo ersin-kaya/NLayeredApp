@@ -10,19 +10,19 @@ public static class FeatureSeed
         modelBuilder.Entity<Feature>().HasData(
             // Electronics - Colors
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.Colors.Black,
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.Black,
                 "Black",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.Colors.White,
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.White,
                 "White",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.Colors.Silver,
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.Silver,
                 "Silver",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color

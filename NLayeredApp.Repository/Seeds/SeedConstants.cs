@@ -32,11 +32,11 @@ public static class SeedConstants
     {
         public static class Electronics
         {
-            public static class Colors
+            public enum ColorIds
             {
-                public const int Black = 1;
-                public const int White = 2;
-                public const int Silver = 3;
+                Black = 1,
+                White = 2,
+                Silver = 3
             }
             
             public static class StorageOptions

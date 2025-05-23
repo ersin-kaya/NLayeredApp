@@ -14,7 +14,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.GalaxyS25,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Electronics.Colors.Silver
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.Silver
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.GalaxyS25,
@@ -34,7 +34,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.GalaxyS24,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Electronics.Colors.White
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.White
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.GalaxyS24,
@@ -54,7 +54,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.LogitechMouse,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Electronics.Colors.Black
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.Black
             ),
             
             // Logitech Keyboard
@@ -62,7 +62,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.LogitechKeyboard,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Electronics.Colors.Black
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.Black
             ),
             
             // Logitech Headset
@@ -70,7 +70,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.LogitechHeadset,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Electronics.Colors.Black
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.Black
             ),
             
             // Logitech Gamepad
@@ -78,7 +78,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.LogitechGamepad,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Electronics.Colors.Silver
+                (int)SeedConstants.FeatureIds.Electronics.ColorIds.Silver
             ),
             
             // Clothing
