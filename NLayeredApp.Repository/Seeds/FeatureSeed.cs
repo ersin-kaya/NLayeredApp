@@ -140,25 +140,25 @@ public static class FeatureSeed
 
             // Clothing - Colors
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Colors.Red,
+                (int)SeedConstants.FeatureIds.Clothing.ColorIds.Red,
                 "Red",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Colors.Blue,
+                (int)SeedConstants.FeatureIds.Clothing.ColorIds.Blue,
                 "Blue",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Colors.Green,
+                (int)SeedConstants.FeatureIds.Clothing.ColorIds.Green,
                 "Green",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Colors.Yellow,
+                (int)SeedConstants.FeatureIds.Clothing.ColorIds.Yellow,
                 "Yellow",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color

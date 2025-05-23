@@ -87,7 +87,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.PoloShirt,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Clothing.Colors.Red
+                (int)SeedConstants.FeatureIds.Clothing.ColorIds.Red
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.PoloShirt,
@@ -107,7 +107,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.BlueDenimJean,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Clothing.Colors.Blue
+                (int)SeedConstants.FeatureIds.Clothing.ColorIds.Blue
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.BlueDenimJean,
@@ -121,7 +121,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.RunningShoes,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.Clothing.Colors.Green
+                (int)SeedConstants.FeatureIds.Clothing.ColorIds.Green
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.RunningShoes,

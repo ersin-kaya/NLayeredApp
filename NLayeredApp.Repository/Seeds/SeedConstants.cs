@@ -75,12 +75,12 @@ public static class SeedConstants
 
         public static class Clothing
         {
-            public static class Colors
+            public enum ColorIds
             {
-                public const int Red = 21;
-                public const int Blue = 22;
-                public const int Green = 23;
-                public const int Yellow = 24;
+                Red = 21,
+                Blue = 22,
+                Green = 23,
+                Yellow = 24
             }
             
             public static class Sizes
