@@ -129,10 +129,19 @@ public static class SeedConstants
     
     public static class ProductIds
     {
-        public const int GalaxyS25 = 48;
-        public const int GalaxyS24 = 49;
-        public const int PoloShirt = 50;
-        public const int DenimJeans = 51;
-        public const int SportsShoes = 52;
+        public const int GalaxyS25 = 1;
+        public const int GalaxyS24 = 2;
+        public const int LogitechMouse = 3;
+        public const int LogitechKeyboard = 4;
+        public const int LogitechHeadset = 5;
+        public const int LogitechGamepad = 6;
+        
+        public const int PoloShirt = 7;
+        public const int BlueDenimJean = 8;
+        public const int SportsShoe = 9;
+        
+        public const int DiningTable = 10;
+        public const int FloorLamp = 11;
+        public const int Bookshelf = 12;
     }
 }
