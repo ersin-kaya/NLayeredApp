@@ -25,7 +25,7 @@ public static class SeedConstants
         Size = 2,
         Material = 3,
         Storage = 4,
-        Ram = 5,
+        Memory = 5,
         Processor = 6,
         ScreenSize = 7
     }
@@ -59,9 +59,9 @@ public static class SeedConstants
             
             public static class Processors
             {
-                public const int AmdRyzen5 = 12;
-                public const int AmdRyzen7 = 13;
-                public const int AmdRyzen9 = 14;
+                public const int AmdRyzen5_7600X = 12;
+                public const int AmdRyzen7_9800X3D = 13;
+                public const int AmdRyzen9_9950X3D = 14;
             }
             
             public static class ScreenSizes
