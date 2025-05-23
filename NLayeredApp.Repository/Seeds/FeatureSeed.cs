@@ -198,55 +198,55 @@ public static class FeatureSeed
 
             // Clothing - Materials
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.Cotton,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Cotton,
                 "Cotton",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.Polyester,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Polyester,
                 "Polyester",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.Wool,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Wool,
                 "Wool",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.Denim,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Denim,
                 "Denim",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.Silk,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Silk,
                 "Silk",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.Leather,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Leather,
                 "Leather",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.FauxLeather,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.FauxLeather,
                 "Faux Leather",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.Linen,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Linen,
                 "Linen",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Materials.Viscose,
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Viscose,
                 "Viscose",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material

@@ -92,17 +92,17 @@ public static class SeedConstants
                 Xl = 29
             }
 
-            public static class Materials
+            public enum MaterialIds
             {
-                public const int Cotton = 30;
-                public const int Polyester = 31;
-                public const int Wool = 32;
-                public const int Denim = 33;
-                public const int Silk = 34;
-                public const int Leather = 35;
-                public const int FauxLeather = 36;
-                public const int Linen = 37;
-                public const int Viscose = 38;
+                Cotton = 30,
+                Polyester = 31,
+                Wool = 32,
+                Denim = 33,
+                Silk = 34,
+                Leather = 35,
+                FauxLeather = 36,
+                Linen = 37,
+                Viscose = 38
             }
         }
 

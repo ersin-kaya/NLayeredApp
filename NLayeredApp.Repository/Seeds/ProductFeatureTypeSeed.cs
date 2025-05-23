@@ -93,7 +93,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.PoloShirt,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material,
-                SeedConstants.FeatureIds.Clothing.Materials.Cotton
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Cotton
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.PoloShirt,
@@ -113,7 +113,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.BlueDenimJean,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material,
-                SeedConstants.FeatureIds.Clothing.Materials.Denim
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Denim
             ),
             
             // Running Shoes
@@ -127,7 +127,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.RunningShoes,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material,
-                SeedConstants.FeatureIds.Clothing.Materials.Polyester
+                (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Polyester
             ),
             
             // Home and Living
