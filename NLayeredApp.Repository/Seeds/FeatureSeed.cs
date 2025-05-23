@@ -102,37 +102,37 @@ public static class FeatureSeed
 
             // Electronics - Screen Sizes
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.ScreenSizes.Inch5_5,
+                (int)SeedConstants.FeatureIds.Electronics.ScreenSizeIds.Inch5_5,
                 "5.5\"",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.ScreenSize
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.ScreenSizes.Inch6_1,
+                (int)SeedConstants.FeatureIds.Electronics.ScreenSizeIds.Inch6_1,
                 "6.1\"",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.ScreenSize
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.ScreenSizes.Inch13_3,
+                (int)SeedConstants.FeatureIds.Electronics.ScreenSizeIds.Inch13_3,
                 "13.3\"",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.ScreenSize
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.ScreenSizes.Inch15_6,
+                (int)SeedConstants.FeatureIds.Electronics.ScreenSizeIds.Inch15_6,
                 "15.6\"",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.ScreenSize
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.ScreenSizes.Inch24,
+                (int)SeedConstants.FeatureIds.Electronics.ScreenSizeIds.Inch24,
                 "24\"",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.ScreenSize
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.ScreenSizes.Inch27,
+                (int)SeedConstants.FeatureIds.Electronics.ScreenSizeIds.Inch27,
                 "27\"",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.ScreenSize

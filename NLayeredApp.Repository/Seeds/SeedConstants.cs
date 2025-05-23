@@ -62,14 +62,14 @@ public static class SeedConstants
                 AmdRyzen9_9950X3D = 14
             }
             
-            public static class ScreenSizes
+            public enum ScreenSizeIds
             {
-                public const int Inch5_5 = 15;
-                public const int Inch6_1 = 16;
-                public const int Inch13_3 = 17;
-                public const int Inch15_6 = 18;
-                public const int Inch24 = 19;
-                public const int Inch27 = 20;
+                Inch5_5 = 15,
+                Inch6_1 = 16,
+                Inch13_3 = 17,
+                Inch15_6 = 18,
+                Inch24 = 19,
+                Inch27 = 20
             }
         }
 
