@@ -30,25 +30,25 @@ public static class FeatureSeed
 
             // Electronics - Storage Options
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.StorageOptions.Gb64,
+                (int)SeedConstants.FeatureIds.Electronics.StorageIds.Gb64,
                 "64 GB",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.StorageOptions.Gb128,
+                (int)SeedConstants.FeatureIds.Electronics.StorageIds.Gb128,
                 "128 GB",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.StorageOptions.Gb256,
+                (int)SeedConstants.FeatureIds.Electronics.StorageIds.Gb256,
                 "256 GB",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.StorageOptions.Gb512,
+                (int)SeedConstants.FeatureIds.Electronics.StorageIds.Gb512,
                 "512 GB",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage

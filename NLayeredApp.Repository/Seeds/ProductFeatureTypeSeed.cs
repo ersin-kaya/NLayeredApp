@@ -20,7 +20,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.GalaxyS25,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage,
-                SeedConstants.FeatureIds.Electronics.StorageOptions.Gb256
+                (int)SeedConstants.FeatureIds.Electronics.StorageIds.Gb256
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.GalaxyS25,
@@ -40,7 +40,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.GalaxyS24,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage,
-                SeedConstants.FeatureIds.Electronics.StorageOptions.Gb128
+                (int)SeedConstants.FeatureIds.Electronics.StorageIds.Gb128
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.GalaxyS24,

@@ -39,12 +39,12 @@ public static class SeedConstants
                 Silver = 3
             }
             
-            public static class StorageOptions
+            public enum StorageIds
             {
-                public const int Gb64 = 4;
-                public const int Gb128 = 5;
-                public const int Gb256 = 6;
-                public const int Gb512 = 7;
+                Gb64 = 4,
+                Gb128 = 5,
+                Gb256 = 6,
+                Gb512 = 7
             }
             
             public static class MemoryOptions
