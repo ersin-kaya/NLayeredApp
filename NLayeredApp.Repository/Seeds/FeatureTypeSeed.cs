@@ -12,7 +12,7 @@ public static class FeatureTypeSeed
             SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Size, "Size"),
             SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Material, "Material"),
             SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Storage, "Storage"),
-            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Ram, "RAM"),
+            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Memory, "Memory"),
             SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Processor, "Processor"),
             SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.ScreenSize, "Screen Size")
         );
