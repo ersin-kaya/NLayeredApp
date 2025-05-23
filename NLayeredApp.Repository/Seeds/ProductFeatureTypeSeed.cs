@@ -99,7 +99,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.PoloShirt,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Size,
-                SeedConstants.FeatureIds.Clothing.Sizes.M
+                (int)SeedConstants.FeatureIds.Clothing.SizeIds.M
             ),
             
             // Blue Denim Jean

@@ -83,13 +83,13 @@ public static class SeedConstants
                 Yellow = 24
             }
             
-            public static class Sizes
+            public enum SizeIds
             {
-                public const int Xs = 25;
-                public const int S = 26;
-                public const int M = 27;
-                public const int L = 28;
-                public const int Xl = 29;
+                Xs = 25,
+                S = 26,
+                M = 27,
+                L = 28,
+                Xl = 29
             }
 
             public static class Materials

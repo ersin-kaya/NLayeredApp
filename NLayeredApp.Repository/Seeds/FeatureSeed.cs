@@ -166,31 +166,31 @@ public static class FeatureSeed
 
             // Clothing - Sizes
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Sizes.Xs,
+                (int)SeedConstants.FeatureIds.Clothing.SizeIds.Xs,
                 "XS",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Size
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Sizes.S,
+                (int)SeedConstants.FeatureIds.Clothing.SizeIds.S,
                 "S",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Size
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Sizes.M,
+                (int)SeedConstants.FeatureIds.Clothing.SizeIds.M,
                 "M",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Size
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Sizes.L,
+                (int)SeedConstants.FeatureIds.Clothing.SizeIds.L,
                 "L",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Size
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Clothing.Sizes.Xl,
+                (int)SeedConstants.FeatureIds.Clothing.SizeIds.Xl,
                 "XL",
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Size
