@@ -55,11 +55,11 @@ public static class SeedConstants
                 Gb32 = 11
             }
             
-            public static class Processors
+            public enum ProcessorIds
             {
-                public const int AmdRyzen5_7600X = 12;
-                public const int AmdRyzen7_9800X3D = 13;
-                public const int AmdRyzen9_9950X3D = 14;
+                AmdRyzen5_7600X = 12,
+                AmdRyzen7_9800X3D = 13,
+                AmdRyzen9_9950X3D = 14
             }
             
             public static class ScreenSizes

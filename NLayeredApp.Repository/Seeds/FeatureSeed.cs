@@ -82,19 +82,19 @@ public static class FeatureSeed
 
             // Electronics - Processors
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.Processors.AmdRyzen5_7600X,
+                (int)SeedConstants.FeatureIds.Electronics.ProcessorIds.AmdRyzen5_7600X,
                 "Amd Ryzen 5 7600X",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Processor
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.Processors.AmdRyzen7_9800X3D,
+                (int)SeedConstants.FeatureIds.Electronics.ProcessorIds.AmdRyzen7_9800X3D,
                 "Amd Ryzen 7 9800X3D",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Processor
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.Processors.AmdRyzen9_9950X3D,
+                (int)SeedConstants.FeatureIds.Electronics.ProcessorIds.AmdRyzen9_9950X3D,
                 "Amd Ryzen 9 9950X3D",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Processor
