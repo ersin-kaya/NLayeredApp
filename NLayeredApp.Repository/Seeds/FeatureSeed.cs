@@ -254,25 +254,25 @@ public static class FeatureSeed
 
             // Home and Living - Colors
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Colors.Beige,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.Beige,
                 "Beige",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Colors.White,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.White,
                 "White",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Colors.Brown,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.Brown,
                 "Brown",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.HomeAndLiving.Colors.Gray,
+                (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.Gray,
                 "Gray",
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color

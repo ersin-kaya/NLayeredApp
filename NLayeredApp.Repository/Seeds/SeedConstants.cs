@@ -108,12 +108,12 @@ public static class SeedConstants
 
         public static class HomeAndLiving
         {
-            public static class Colors
+            public enum ColorIds
             {
-                public const int Beige = 39;
-                public const int White = 40;
-                public const int Brown = 41;
-                public const int Gray = 42;
+                Beige = 39,
+                White = 40,
+                Brown = 41,
+                Gray = 42
             }
         
             public static class Materials

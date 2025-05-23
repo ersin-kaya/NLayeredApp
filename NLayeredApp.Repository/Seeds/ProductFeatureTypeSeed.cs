@@ -136,7 +136,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.Bookshelf,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.HomeAndLiving.Colors.Brown
+                (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.Brown
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.Bookshelf,
@@ -150,7 +150,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.DiningTable,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.HomeAndLiving.Colors.Gray
+                (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.Gray
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.DiningTable,
@@ -164,7 +164,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.LedFloorLamp,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                SeedConstants.FeatureIds.HomeAndLiving.Colors.White
+                (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.White
             ),
             SeedHelpers.CreateProductFeatureType(
                 SeedConstants.ProductIds.LedFloorLamp,
