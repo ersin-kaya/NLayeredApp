@@ -8,8 +8,6 @@ public static class SeedConstants
         public const string CreatedBy = "system";
         
         public const bool IsActive = true;
-        public const bool IsRequired = true;
-        public const bool IsNotRequired = false;
     }
     
     public enum CategoryIds
