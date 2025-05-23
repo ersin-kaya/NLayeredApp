@@ -8,6 +8,7 @@ public static class CategoryFeatureTypeSeed
     public static void Apply(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<CategoryFeatureType>().HasData(
+            // Electronics
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
@@ -16,14 +17,12 @@ public static class CategoryFeatureTypeSeed
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage,
-                "Storage Capacity",
-                SeedConstants.Common.IsRequired
+                "Storage Capacity"
             ),
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.Electronics,
-                (int)SeedConstants.FeatureTypeIds.Ram,
-                "RAM",
-                SeedConstants.Common.IsRequired
+                (int)SeedConstants.FeatureTypeIds.Memory,
+                "RAM"
             ),
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.Electronics,
@@ -36,24 +35,24 @@ public static class CategoryFeatureTypeSeed
                 "Screen Size"
             ),
             
+            // Clothing
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color,
-                "Color",
-                SeedConstants.Common.IsRequired
+                "Color"
             ),
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Size,
-                "Size",
-                SeedConstants.Common.IsRequired
+                "Size"
             ),
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material,
-                "Fabric"
+                "Material"
             ),
             
+            // Home and Living
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color,
@@ -62,8 +61,7 @@ public static class CategoryFeatureTypeSeed
             SeedHelpers.CreateCategoryFeatureType(
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material,
-                "Material",
-                SeedConstants.Common.IsRequired
+                "Material"
             )
         );
     }
