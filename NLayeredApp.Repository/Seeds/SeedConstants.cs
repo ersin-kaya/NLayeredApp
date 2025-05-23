@@ -47,12 +47,12 @@ public static class SeedConstants
                 Gb512 = 7
             }
             
-            public static class MemoryOptions
+            public enum MemoryIds
             {
-                public const int Gb4 = 8;
-                public const int Gb8 = 9;
-                public const int Gb16 = 10;
-                public const int Gb32 = 11;
+                Gb4 = 8,
+                Gb8 = 9,
+                Gb16 = 10,
+                Gb32 = 11
             }
             
             public static class Processors

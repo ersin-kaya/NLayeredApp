@@ -26,7 +26,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.GalaxyS25,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Memory,
-                SeedConstants.FeatureIds.Electronics.MemoryOptions.Gb16
+                (int)SeedConstants.FeatureIds.Electronics.MemoryIds.Gb16
             ),
             
             // Galaxy S24
@@ -46,7 +46,7 @@ public static class ProductFeatureTypeSeed
                 SeedConstants.ProductIds.GalaxyS24,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Memory,
-                SeedConstants.FeatureIds.Electronics.MemoryOptions.Gb8
+                (int)SeedConstants.FeatureIds.Electronics.MemoryIds.Gb8
             ),
             
             // Logitech Mouse

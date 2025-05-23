@@ -56,25 +56,25 @@ public static class FeatureSeed
 
             // Electronics - Memory Options
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.MemoryOptions.Gb4,
+                (int)SeedConstants.FeatureIds.Electronics.MemoryIds.Gb4,
                 "4 GB",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Memory
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.MemoryOptions.Gb8,
+                (int)SeedConstants.FeatureIds.Electronics.MemoryIds.Gb8,
                 "8 GB",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Memory
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.MemoryOptions.Gb16,
+                (int)SeedConstants.FeatureIds.Electronics.MemoryIds.Gb16,
                 "16 GB",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Memory
             ),
             SeedHelpers.CreateFeature(
-                SeedConstants.FeatureIds.Electronics.MemoryOptions.Gb32,
+                (int)SeedConstants.FeatureIds.Electronics.MemoryIds.Gb32,
                 "32 GB",
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Memory
