@@ -129,19 +129,28 @@ public static class SeedConstants
     
     public static class ProductIds
     {
-        public const int GalaxyS25 = 1;
-        public const int GalaxyS24 = 2;
-        public const int LogitechMouse = 3;
-        public const int LogitechKeyboard = 4;
-        public const int LogitechHeadset = 5;
-        public const int LogitechGamepad = 6;
-        
-        public const int PoloShirt = 7;
-        public const int BlueDenimJean = 8;
-        public const int RunningShoes = 9;
-        
-        public const int DiningTable = 10;
-        public const int LedFloorLamp = 11;
-        public const int Bookshelf = 12;
+        public enum Electronics
+        {
+            GalaxyS25 = 1,
+            GalaxyS24 = 2,
+            LogitechMouse = 3,
+            LogitechKeyboard = 4,
+            LogitechHeadset = 5,
+            LogitechGamepad = 6
+        }
+    
+        public enum Clothing
+        {
+            PoloShirt = 7,
+            BlueDenimJean = 8,
+            RunningShoes = 9
+        }
+    
+        public enum HomeAndLiving
+        {
+            DiningTable = 10,
+            LedFloorLamp = 11,
+            Bookshelf = 12
+        }
     }
 }

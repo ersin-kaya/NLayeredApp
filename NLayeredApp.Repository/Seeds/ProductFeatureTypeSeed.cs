@@ -11,19 +11,19 @@ public static class ProductFeatureTypeSeed
             // Electronics
             // Galaxy S25
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.GalaxyS25,
+                (int)SeedConstants.ProductIds.Electronics.GalaxyS25,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Electronics.ColorIds.Silver
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.GalaxyS25,
+                (int)SeedConstants.ProductIds.Electronics.GalaxyS25,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage,
                 (int)SeedConstants.FeatureIds.Electronics.StorageIds.Gb256
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.GalaxyS25,
+                (int)SeedConstants.ProductIds.Electronics.GalaxyS25,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Memory,
                 (int)SeedConstants.FeatureIds.Electronics.MemoryIds.Gb16
@@ -31,19 +31,19 @@ public static class ProductFeatureTypeSeed
             
             // Galaxy S24
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.GalaxyS24,
+                (int)SeedConstants.ProductIds.Electronics.GalaxyS24,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Electronics.ColorIds.White
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.GalaxyS24,
+                (int)SeedConstants.ProductIds.Electronics.GalaxyS24,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Storage,
                 (int)SeedConstants.FeatureIds.Electronics.StorageIds.Gb128
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.GalaxyS24,
+                (int)SeedConstants.ProductIds.Electronics.GalaxyS24,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Memory,
                 (int)SeedConstants.FeatureIds.Electronics.MemoryIds.Gb8
@@ -51,7 +51,7 @@ public static class ProductFeatureTypeSeed
             
             // Logitech Mouse
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.LogitechMouse,
+                (int)SeedConstants.ProductIds.Electronics.LogitechMouse,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Electronics.ColorIds.Black
@@ -59,7 +59,7 @@ public static class ProductFeatureTypeSeed
             
             // Logitech Keyboard
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.LogitechKeyboard,
+                (int)SeedConstants.ProductIds.Electronics.LogitechKeyboard,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Electronics.ColorIds.Black
@@ -67,7 +67,7 @@ public static class ProductFeatureTypeSeed
             
             // Logitech Headset
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.LogitechHeadset,
+                (int)SeedConstants.ProductIds.Electronics.LogitechHeadset,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Electronics.ColorIds.Black
@@ -75,7 +75,7 @@ public static class ProductFeatureTypeSeed
             
             // Logitech Gamepad
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.LogitechGamepad,
+                (int)SeedConstants.ProductIds.Electronics.LogitechGamepad,
                 (int)SeedConstants.CategoryIds.Electronics,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Electronics.ColorIds.Silver
@@ -84,19 +84,19 @@ public static class ProductFeatureTypeSeed
             // Clothing
             // Polo Shirt
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.PoloShirt,
+                (int)SeedConstants.ProductIds.Clothing.PoloShirt,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Clothing.ColorIds.Red
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.PoloShirt,
+                (int)SeedConstants.ProductIds.Clothing.PoloShirt,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material,
                 (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Cotton
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.PoloShirt,
+                (int)SeedConstants.ProductIds.Clothing.PoloShirt,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Size,
                 (int)SeedConstants.FeatureIds.Clothing.SizeIds.M
@@ -104,13 +104,13 @@ public static class ProductFeatureTypeSeed
             
             // Blue Denim Jean
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.BlueDenimJean,
+                (int)SeedConstants.ProductIds.Clothing.BlueDenimJean,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Clothing.ColorIds.Blue
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.BlueDenimJean,
+                (int)SeedConstants.ProductIds.Clothing.BlueDenimJean,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material,
                 (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Denim
@@ -118,13 +118,13 @@ public static class ProductFeatureTypeSeed
             
             // Running Shoes
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.RunningShoes,
+                (int)SeedConstants.ProductIds.Clothing.RunningShoes,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.Clothing.ColorIds.Green
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.RunningShoes,
+                (int)SeedConstants.ProductIds.Clothing.RunningShoes,
                 (int)SeedConstants.CategoryIds.Clothing,
                 (int)SeedConstants.FeatureTypeIds.Material,
                 (int)SeedConstants.FeatureIds.Clothing.MaterialIds.Polyester
@@ -133,13 +133,13 @@ public static class ProductFeatureTypeSeed
             // Home and Living
             // Bookshelf
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.Bookshelf,
+                (int)SeedConstants.ProductIds.HomeAndLiving.Bookshelf,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.Brown
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.Bookshelf,
+                (int)SeedConstants.ProductIds.HomeAndLiving.Bookshelf,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material,
                 (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Wood
@@ -147,13 +147,13 @@ public static class ProductFeatureTypeSeed
             
             // Dining Table Set
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.DiningTable,
+                (int)SeedConstants.ProductIds.HomeAndLiving.DiningTable,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.Gray
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.DiningTable,
+                (int)SeedConstants.ProductIds.HomeAndLiving.DiningTable,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material,
                 (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Ceramic
@@ -161,13 +161,13 @@ public static class ProductFeatureTypeSeed
             
             // LED Floor Lamp
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.LedFloorLamp,
+                (int)SeedConstants.ProductIds.HomeAndLiving.LedFloorLamp,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Color,
                 (int)SeedConstants.FeatureIds.HomeAndLiving.ColorIds.White
             ),
             SeedHelpers.CreateProductFeatureType(
-                SeedConstants.ProductIds.LedFloorLamp,
+                (int)SeedConstants.ProductIds.HomeAndLiving.LedFloorLamp,
                 (int)SeedConstants.CategoryIds.HomeAndLiving,
                 (int)SeedConstants.FeatureTypeIds.Material,
                 (int)SeedConstants.FeatureIds.HomeAndLiving.MaterialIds.Metal
