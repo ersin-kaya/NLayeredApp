@@ -1,6 +1,6 @@
 ﻿namespace NLayeredApp.Core.Common
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntity : IEntity
     {
         public int Id { get; set; }
     }
