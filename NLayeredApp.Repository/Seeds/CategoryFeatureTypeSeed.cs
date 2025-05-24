@@ -10,57 +10,57 @@ public static class CategoryFeatureTypeSeed
         modelBuilder.Entity<CategoryFeatureType>().HasData(
             // Electronics
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.Electronics,
-                (int)SeedConstants.FeatureTypeIds.Color,
+                SeedConstants.CategoryIds.Electronics,
+                SeedConstants.FeatureTypeIds.Color,
                 "Color"
             ),
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.Electronics,
-                (int)SeedConstants.FeatureTypeIds.Storage,
+                SeedConstants.CategoryIds.Electronics,
+                SeedConstants.FeatureTypeIds.Storage,
                 "Storage Capacity"
             ),
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.Electronics,
-                (int)SeedConstants.FeatureTypeIds.Memory,
+                SeedConstants.CategoryIds.Electronics,
+                SeedConstants.FeatureTypeIds.Memory,
                 "RAM"
             ),
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.Electronics,
-                (int)SeedConstants.FeatureTypeIds.Processor,
+                SeedConstants.CategoryIds.Electronics,
+                SeedConstants.FeatureTypeIds.Processor,
                 "Processor"
             ),
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.Electronics,
-                (int)SeedConstants.FeatureTypeIds.ScreenSize,
+                SeedConstants.CategoryIds.Electronics,
+                SeedConstants.FeatureTypeIds.ScreenSize,
                 "Screen Size"
             ),
             
             // Clothing
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.Clothing,
-                (int)SeedConstants.FeatureTypeIds.Color,
+                SeedConstants.CategoryIds.Clothing,
+                SeedConstants.FeatureTypeIds.Color,
                 "Color"
             ),
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.Clothing,
-                (int)SeedConstants.FeatureTypeIds.Size,
+                SeedConstants.CategoryIds.Clothing,
+                SeedConstants.FeatureTypeIds.Size,
                 "Size"
             ),
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.Clothing,
-                (int)SeedConstants.FeatureTypeIds.Material,
+                SeedConstants.CategoryIds.Clothing,
+                SeedConstants.FeatureTypeIds.Material,
                 "Material"
             ),
             
             // Home and Living
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.HomeAndLiving,
-                (int)SeedConstants.FeatureTypeIds.Color,
+                SeedConstants.CategoryIds.HomeAndLiving,
+                SeedConstants.FeatureTypeIds.Color,
                 "Color"
             ),
             SeedHelpers.CreateCategoryFeatureType(
-                (int)SeedConstants.CategoryIds.HomeAndLiving,
-                (int)SeedConstants.FeatureTypeIds.Material,
+                SeedConstants.CategoryIds.HomeAndLiving,
+                SeedConstants.FeatureTypeIds.Material,
                 "Material"
             )
         );

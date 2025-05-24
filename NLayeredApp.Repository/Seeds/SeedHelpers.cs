@@ -4,11 +4,11 @@ namespace NLayeredApp.Repository.Seeds;
 
 public static class SeedHelpers
 {
-    public static Category CreateCategory(int id, string name, string? description = null)
+    public static Category CreateCategory(SeedConstants.CategoryIds id, string name, string? description = null)
     {
         return new Category
         {
-            Id = id,
+            Id = (int)id,
             Name = name,
             Description = description,
             IsActive = SeedConstants.Common.IsActive,
@@ -17,61 +17,63 @@ public static class SeedHelpers
         };
     }
     
-    public static FeatureType CreateFeatureType(int id, string name)
+    public static FeatureType CreateFeatureType(SeedConstants.FeatureTypeIds id, string name)
     {
         return new FeatureType
         {
-            Id = id,
+            Id = (int)id,
             Name = name
         };
     }
     
-    public static CategoryFeatureType CreateCategoryFeatureType(int categoryId, int featureTypeId, string label, bool isRequired = false)
+    public static CategoryFeatureType CreateCategoryFeatureType(SeedConstants.CategoryIds categoryId, SeedConstants.FeatureTypeIds featureTypeId, string label, bool isRequired = false)
     {
         return new CategoryFeatureType
         {
-            CategoryId = categoryId,
-            FeatureTypeId = featureTypeId,
+            CategoryId = (int)categoryId,
+            FeatureTypeId = (int)featureTypeId,
             Label = label,
             IsRequired = isRequired
         };
     }
     
-    public static Feature CreateFeature(int id, string value, int categoryId, int featureTypeId)
+    public static Feature CreateFeature<T>(T id, string value, SeedConstants.CategoryIds categoryId, SeedConstants.FeatureTypeIds featureTypeId) where T : Enum
     {
         return new Feature
         {
-            Id = id,
+            Id = Convert.ToInt32(id),
             Value = value,
-            CategoryId = categoryId,
-            FeatureTypeId = featureTypeId
+            CategoryId = (int)categoryId,
+            FeatureTypeId = (int)featureTypeId
         };
     }
     
-    public static Product CreateProduct(int id, string name, string description, decimal price, int stock, int categoryId)
+    public static Product CreateProduct<T>(T id, string name, string description, decimal price, int stock, SeedConstants.CategoryIds categoryId) where T : Enum
     {
         return new Product
         {
-            Id = id,
+            Id = Convert.ToInt32(id),
             Name = name,
             Description = description,
             Price = price,
             Stock = stock,
             IsActive = SeedConstants.Common.IsActive,
-            CategoryId = categoryId,
+            CategoryId = (int)categoryId,
             CreatedAt = SeedConstants.Common.CreatedAt,
             CreatedBy = SeedConstants.Common.CreatedBy
         };
     }
     
-    public static ProductFeatureType CreateProductFeatureType(int productId, int categoryId, int featureTypeId, int featureId)
+    public static ProductFeatureType CreateProductFeatureType<TProductId, TFeatureId>(TProductId productId, SeedConstants.CategoryIds categoryId, SeedConstants.FeatureTypeIds featureTypeId, TFeatureId featureId) 
+        where TProductId : Enum 
+        where TFeatureId : Enum
     {
         return new ProductFeatureType
         {
-            ProductId = productId,
-            CategoryId = categoryId,
-            FeatureTypeId = featureTypeId,
-            FeatureId = featureId
+            ProductId = Convert.ToInt32(productId),
+            CategoryId = (int)categoryId,
+            FeatureTypeId = (int)featureTypeId,
+            FeatureId = Convert.ToInt32(featureId)
         };
     }
 }

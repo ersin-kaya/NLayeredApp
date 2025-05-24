@@ -8,13 +8,13 @@ public static class FeatureTypeSeed
     public static void Apply(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<FeatureType>().HasData(
-            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Color, "Color"),
-            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Size, "Size"),
-            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Material, "Material"),
-            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Storage, "Storage"),
-            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Memory, "Memory"),
-            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.Processor, "Processor"),
-            SeedHelpers.CreateFeatureType((int)SeedConstants.FeatureTypeIds.ScreenSize, "Screen Size")
+            SeedHelpers.CreateFeatureType(SeedConstants.FeatureTypeIds.Color, "Color"),
+            SeedHelpers.CreateFeatureType(SeedConstants.FeatureTypeIds.Size, "Size"),
+            SeedHelpers.CreateFeatureType(SeedConstants.FeatureTypeIds.Material, "Material"),
+            SeedHelpers.CreateFeatureType(SeedConstants.FeatureTypeIds.Storage, "Storage"),
+            SeedHelpers.CreateFeatureType(SeedConstants.FeatureTypeIds.Memory, "Memory"),
+            SeedHelpers.CreateFeatureType(SeedConstants.FeatureTypeIds.Processor, "Processor"),
+            SeedHelpers.CreateFeatureType(SeedConstants.FeatureTypeIds.ScreenSize, "Screen Size")
         );
     }
 }

@@ -9,17 +9,17 @@ public static class CategorySeed
     {
         modelBuilder.Entity<Category>().HasData(
             SeedHelpers.CreateCategory(
-                (int)SeedConstants.CategoryIds.Electronics,
+                SeedConstants.CategoryIds.Electronics,
                 "Electronics",
                 "Electronic products category"
             ),
             SeedHelpers.CreateCategory(
-                (int)SeedConstants.CategoryIds.Clothing,
+                SeedConstants.CategoryIds.Clothing,
                 "Clothing",
                 "Clothing products category"
             ),
             SeedHelpers.CreateCategory(
-                (int)SeedConstants.CategoryIds.HomeAndLiving,
+                SeedConstants.CategoryIds.HomeAndLiving,
                 "Home & Living",
                 "Home and living products"
             )
