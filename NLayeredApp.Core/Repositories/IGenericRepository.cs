@@ -1,12 +1,14 @@
 ﻿using System.Linq.Expressions;
+using NLayeredApp.Core.Common;
 
 namespace NLayeredApp.Core.Repositories
 {
-    public interface IGenericRepository<TEntity> where TEntity : class
+    public interface IGenericRepository<TEntity> where TEntity : class, IEntity
     {
         IQueryable<TEntity> Query();
 
         Task<TEntity> GetByIdAsync(int id);
+        Task<TEntity> GetByIdNoTrackingAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate);
 
