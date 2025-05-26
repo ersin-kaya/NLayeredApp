@@ -1,6 +1,7 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Entities;
+using NLayeredApp.DataAccess.Seeds;
 
 namespace NLayeredApp.DataAccess;
 
@@ -19,5 +20,7 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        
+        SeedDataManager.ApplySeedData(modelBuilder);
     }
 }
