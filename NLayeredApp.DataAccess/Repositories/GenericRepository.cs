@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Common;
 using NLayeredApp.Core.Repositories;
 
-namespace NLayeredApp.Repository.Repositories;
+namespace NLayeredApp.DataAccess.Repositories;
 
 public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class, IEntity
 {

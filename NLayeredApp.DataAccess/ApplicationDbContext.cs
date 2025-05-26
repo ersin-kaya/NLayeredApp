@@ -2,7 +2,7 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Entities;
 
-namespace NLayeredApp.Repository;
+namespace NLayeredApp.DataAccess;
 
 public class ApplicationDbContext : DbContext
 {

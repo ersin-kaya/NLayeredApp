@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Entities;
 
-namespace NLayeredApp.Repository.Seeds;
+namespace NLayeredApp.DataAccess.Seeds;
 
 public static class ProductSeed
 {

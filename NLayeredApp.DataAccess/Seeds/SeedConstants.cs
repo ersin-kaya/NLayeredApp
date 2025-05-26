@@ -1,4 +1,4 @@
-namespace NLayeredApp.Repository.Seeds;
+namespace NLayeredApp.DataAccess.Seeds;
 
 public static class SeedConstants
 {

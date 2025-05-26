@@ -1,5 +1,6 @@
-namespace NLayeredApp.Repository.Seeds;
 using Microsoft.EntityFrameworkCore;
+
+namespace NLayeredApp.DataAccess.Seeds;
 
 public static class SeedDataManager
 {
