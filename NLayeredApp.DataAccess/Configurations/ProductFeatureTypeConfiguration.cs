@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NLayeredApp.Core.Entities;
 
-namespace NLayeredApp.Repository.Configurations;
+namespace NLayeredApp.DataAccess.Configurations;
 
 public class ProductFeatureTypeConfiguration : IEntityTypeConfiguration<ProductFeatureType>
 {

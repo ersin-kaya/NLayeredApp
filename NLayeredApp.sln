@@ -5,7 +5,7 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.Core", "NLayeredApp.Core\NLayeredApp.Core.csproj", "{674C3DEE-479A-49ED-B4DC-8D193B8D59D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.Repository", "NLayeredApp.Repository\NLayeredApp.Repository.csproj", "{46E23FDE-EB1A-479F-96F7-98C50D929888}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.DataAccess", "NLayeredApp.DataAccess\NLayeredApp.DataAccess.csproj", "{46E23FDE-EB1A-479F-96F7-98C50D929888}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.Service", "NLayeredApp.Service\NLayeredApp.Service.csproj", "{727F236C-75FB-433C-A83A-C3B901C83985}"
 EndProject

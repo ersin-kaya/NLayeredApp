@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NLayeredApp.Repository\NLayeredApp.Repository.csproj" />
+    <ProjectReference Include="..\NLayeredApp.DataAccess\NLayeredApp.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
