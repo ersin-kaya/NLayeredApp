@@ -13,6 +13,8 @@ public record ProductDto
     public DateTimeOffset CreatedAt { get; init; }
     public DateTimeOffset? LastModifiedAt { get; init; }
     public bool InStock => Stock > 0;
+    
+    public ProductDto() { }
 
     public ProductDto(int id, string name, string? description, decimal price,
         int stock, bool isActive, int categoryId, string categoryName,
