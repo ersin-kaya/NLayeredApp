@@ -2,7 +2,7 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Interfaces.Repositories;
 using NLayeredApp.Core.Interfaces.UnitOfWork;
-using NLayeredApp.DataAccess;
+using NLayeredApp.DataAccess.Context;
 using NLayeredApp.DataAccess.Repositories;
 using NLayeredApp.DataAccess.UnitOfWork;
 
