@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Entities;
-using NLayeredApp.Core.Repositories;
+using NLayeredApp.Core.Interfaces.Repositories;
 
 namespace NLayeredApp.DataAccess.Repositories;
 

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore.Storage;
-using NLayeredApp.Core.Repositories;
-using NLayeredApp.Core.UnitOfWork;
+using NLayeredApp.Core.Interfaces.Repositories;
+using NLayeredApp.Core.Interfaces.UnitOfWork;
 using NLayeredApp.DataAccess.Repositories;
 
 namespace NLayeredApp.DataAccess.UnitOfWork;

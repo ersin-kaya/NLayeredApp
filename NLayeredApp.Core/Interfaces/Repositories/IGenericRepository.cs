@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using NLayeredApp.Core.Common;
 
-namespace NLayeredApp.Core.Repositories
+namespace NLayeredApp.Core.Interfaces.Repositories
 {
     public interface IGenericRepository<TEntity> where TEntity : class, IEntity
     {

@@ -1,6 +1,6 @@
-﻿using NLayeredApp.Core.Repositories;
+﻿using NLayeredApp.Core.Interfaces.Repositories;
 
-namespace NLayeredApp.Core.UnitOfWork
+namespace NLayeredApp.Core.Interfaces.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
