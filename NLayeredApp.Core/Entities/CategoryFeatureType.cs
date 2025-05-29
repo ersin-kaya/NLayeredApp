@@ -1,4 +1,6 @@
-﻿namespace NLayeredApp.Core.Entities
+﻿using NLayeredApp.Core.Constants;
+
+namespace NLayeredApp.Core.Entities
 {
     public class CategoryFeatureType
     {
@@ -9,7 +11,7 @@
         public int FeatureTypeId { get; set; }
         public FeatureType FeatureType { get; set; } = null!;
 
-        public bool IsRequired { get; set; } = false;
+        public bool IsRequired { get; set; } = ApplicationConstants.CategoryFeatureTypeIsRequired;
         public string? Label { get; set; }
 
         public ICollection<Feature> Features { get; set; } = new List<Feature>();

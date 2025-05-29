@@ -1,17 +1,17 @@
+using NLayeredApp.Core.Constants;
+
 namespace NLayeredApp.Core.Exceptions;
 
 public class ValidationException : Exception
 {
     public List<string> Errors { get; }
 
-    public ValidationException(string error) : base("Validation failed")
+    public ValidationException(string error) : this(ErrorMessages.ValidationFailed, new List<string> { error })
     {
-        Errors = new List<string> { error };
     }
 
-    public ValidationException(List<string> errors) : base("Validation failed")
+    public ValidationException(List<string> errors) : this(ErrorMessages.ValidationFailed, errors)
     {
-        Errors = errors ?? new List<string>();
     }
 
     public ValidationException(string message, List<string> errors) : base(message)

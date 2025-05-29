@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using NLayeredApp.Core.Constants;
 using NLayeredApp.Core.Entities;
 
 namespace NLayeredApp.DataAccess.Configurations;
@@ -12,28 +13,28 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         builder.Property(p => p.Name)
             .IsRequired()
-            .HasMaxLength(200);
+            .HasMaxLength(ApplicationConstants.ProductNameMaxLength);
 
         builder.Property(p => p.Description)
-            .HasMaxLength(2000);
+            .HasMaxLength(ApplicationConstants.ProductDescriptionMaxLength);
 
         builder.Property(p => p.Price)
-            .HasPrecision(18, 2);
+            .HasPrecision(ApplicationConstants.ProductPricePrecision, ApplicationConstants.ProductPriceScale);
 
         builder.Property(p => p.IsActive)
-            .HasDefaultValue(true);
+            .HasDefaultValue(ApplicationConstants.ProductIsActive);
 
         builder.Property(p => p.DeletedBy)
-            .HasMaxLength(100);
+            .HasMaxLength(ApplicationConstants.DeletedByMaxLength);
 
         builder.Property(p => p.IsDeleted)
-            .HasDefaultValue(false);
+            .HasDefaultValue(ApplicationConstants.ProductIsDeleted);
         
         builder.Property(e => e.CreatedBy)
-            .HasMaxLength(100);
+            .HasMaxLength(ApplicationConstants.CreatedByMaxLength);
 
         builder.Property(e => e.LastModifiedBy)
-            .HasMaxLength(100);
+            .HasMaxLength(ApplicationConstants.LastModifiedByMaxLength);
 
         builder.HasOne(p => p.Category)
             .WithMany(c => c.Products)

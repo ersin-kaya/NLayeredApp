@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using NLayeredApp.Core.Constants;
 using NLayeredApp.Core.Entities;
 
 namespace NLayeredApp.DataAccess.Configurations;
@@ -11,10 +12,10 @@ public class CategoryFeatureTypeConfiguration : IEntityTypeConfiguration<Categor
         builder.HasKey(cft => new { cft.CategoryId, cft.FeatureTypeId });
 
         builder.Property(cft => cft.Label)
-            .HasMaxLength(100);
+            .HasMaxLength(ApplicationConstants.CategoryFeatureTypeLabelMaxLength);
 
         builder.Property(cft => cft.IsRequired)
-            .HasDefaultValue(false);
+            .HasDefaultValue(ApplicationConstants.CategoryFeatureTypeIsRequired);
 
         builder.HasOne(cft => cft.Category)
             .WithMany(c => c.CategoryFeatureTypes)
