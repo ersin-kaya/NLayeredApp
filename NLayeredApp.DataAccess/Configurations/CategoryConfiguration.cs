@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using NLayeredApp.Core.Constants;
 using NLayeredApp.Core.Entities;
 
 namespace NLayeredApp.DataAccess.Configurations;
@@ -12,21 +13,21 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         
         builder.Property(c => c.Name)
             .IsRequired()
-            .HasMaxLength(50);
+            .HasMaxLength(ApplicationConstants.CategoryNameMaxLength);
 
         builder.Property(c => c.Description)
-            .HasMaxLength(1000);
+            .HasMaxLength(ApplicationConstants.CategoryDescriptionMaxLength);
 
         builder.Property(c => c.IsActive)
-            .HasDefaultValue(true);
+            .HasDefaultValue(ApplicationConstants.CategoryIsActive);
         
         builder.HasIndex(c => c.Name)
             .IsUnique();
         
         builder.Property(e => e.CreatedBy)
-            .HasMaxLength(100);
+            .HasMaxLength(ApplicationConstants.CreatedByMaxLength);
 
         builder.Property(e => e.LastModifiedBy)
-            .HasMaxLength(100);
+            .HasMaxLength(ApplicationConstants.LastModifiedByMaxLength);
     }
 }
