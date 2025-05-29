@@ -8,13 +8,15 @@ public static class ApplicationConstants
     public const int MaxPageSize = 100;
     
     // Common audit fields
-    public const int CreatedByMaxLength = 100;
-    public const int LastModifiedByMaxLength = 100;
-    public const int DeletedByMaxLength = 100;
+    private const int AuditUserNameMaxLength = 100;
+    
+    public const int CreatedByMaxLength = AuditUserNameMaxLength;
+    public const int LastModifiedByMaxLength = AuditUserNameMaxLength;
+    public const int DeletedByMaxLength = AuditUserNameMaxLength;
     
     // Category entity constants
-    public const int CategoryNameMaxLength = 100;
-    public const int CategoryDescriptionMaxLength = 500;
+    public const int CategoryNameMaxLength = 50;
+    public const int CategoryDescriptionMaxLength = 1000;
     public const bool CategoryIsActive = true;
     
     // Product entity constants
