@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NLayeredApp.Service\NLayeredApp.Service.csproj" />
+    <ProjectReference Include="..\NLayeredApp.Business\NLayeredApp.Business.csproj" />
   </ItemGroup>
 
 </Project>

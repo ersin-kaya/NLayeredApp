@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.Core", "NLayere
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.DataAccess", "NLayeredApp.DataAccess\NLayeredApp.DataAccess.csproj", "{46E23FDE-EB1A-479F-96F7-98C50D929888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.Service", "NLayeredApp.Service\NLayeredApp.Service.csproj", "{727F236C-75FB-433C-A83A-C3B901C83985}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.Business", "NLayeredApp.Business\NLayeredApp.Business.csproj", "{727F236C-75FB-433C-A83A-C3B901C83985}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayeredApp.API", "NLayeredApp.API\NLayeredApp.API.csproj", "{4504E74F-9A6C-44ED-859B-CC73C9AA038D}"
 EndProject
