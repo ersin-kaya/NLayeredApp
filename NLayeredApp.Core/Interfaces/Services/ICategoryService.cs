@@ -1,4 +1,5 @@
 using NLayeredApp.Core.DTOs.Category;
+using NLayeredApp.Core.DTOs.Category.Responses;
 using NLayeredApp.Core.DTOs.Common;
 
 namespace NLayeredApp.Core.Interfaces.Services;
