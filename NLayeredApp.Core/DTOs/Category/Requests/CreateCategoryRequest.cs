@@ -1,4 +1,4 @@
-namespace NLayeredApp.Core.DTOs.Category;
+namespace NLayeredApp.Core.DTOs.Category.Requests;
 
 public record CreateCategoryRequest
 {
