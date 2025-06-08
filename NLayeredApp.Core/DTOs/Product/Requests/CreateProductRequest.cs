@@ -1,4 +1,4 @@
-namespace NLayeredApp.Core.DTOs.Product;
+namespace NLayeredApp.Core.DTOs.Product.Requests;
 
 public record CreateProductRequest
 {
