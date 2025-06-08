@@ -1,6 +1,6 @@
-namespace NLayeredApp.Core.DTOs.Product;
+namespace NLayeredApp.Core.DTOs.Product.Requests;
 
-public record UpdateProductDto
+public record UpdateProductRequest
 {
     public int Id { get; init; }
     public string Name { get; init; } = string.Empty;
@@ -10,9 +10,9 @@ public record UpdateProductDto
     public bool IsActive { get; init; }
     public int CategoryId { get; init; }
     
-    public UpdateProductDto() { }
+    public UpdateProductRequest() { }
 
-    public UpdateProductDto(int id, string name, string? description, decimal price, 
+    public UpdateProductRequest(int id, string name, string? description, decimal price, 
         int stock, bool isActive, int categoryId)
     {
         Id = id;

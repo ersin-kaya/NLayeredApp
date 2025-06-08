@@ -1,4 +1,4 @@
-namespace NLayeredApp.Core.DTOs.Product;
+namespace NLayeredApp.Core.DTOs.Product.Responses;
 
 public record ProductDto
 {
