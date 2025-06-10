@@ -1,3 +1,4 @@
+using NLayeredApp.Core.Constants;
 using NLayeredApp.Core.DTOs.Common;
 
 namespace NLayeredApp.Core.DTOs.Product.Requests;
@@ -12,7 +13,7 @@ public class GetProductsRequest : PagedRequest
     /// <summary>
     /// Include inactive products
     /// </summary>
-    public bool IncludeInactive { get; set; } = false;
+    public bool IncludeInactive { get; set; } = ApplicationConstants.Defaults.IncludeInactive;
 
     /// <summary>
     /// Minimum price filter
@@ -32,5 +33,5 @@ public class GetProductsRequest : PagedRequest
     /// <summary>
     /// Include deleted products (soft delete)
     /// </summary>
-    public bool IncludeDeleted { get; set; } = false;
+    public bool IncludeDeleted { get; set; } = ApplicationConstants.Defaults.IncludeDeleted;
 }

@@ -11,6 +11,15 @@ public static class ApplicationConstants
         public const bool DefaultIsDescending = false;
     }
     
+    /// <summary>
+    /// Common default values
+    /// </summary>
+    public static class Defaults
+    {
+        public const bool IncludeInactive = false;
+        public const bool IncludeDeleted = false;
+    }
+    
     public static class AuditFields
     {
         private const int UserNameMaxLength = 100;
@@ -25,6 +34,7 @@ public static class ApplicationConstants
         public const int NameMaxLength = 50;
         public const int DescriptionMaxLength = 1000;
         public const bool IsActiveDefault = true;
+        public const bool IncludeProductCount = false;
     }
     
     public static class Product
