@@ -1,6 +1,6 @@
 using NLayeredApp.Core.Entities;
 
-namespace NLayeredApp.Core.Repositories;
+namespace NLayeredApp.Core.Interfaces.Repositories;
 
 public interface IProductRepository : IGenericRepository<Product>
 {

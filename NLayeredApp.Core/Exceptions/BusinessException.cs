@@ -1,12 +1,13 @@
+using NLayeredApp.Core.Constants;
+
 namespace NLayeredApp.Core.Exceptions;
 
 public class BusinessException : Exception
 {
     public string Code { get; }
 
-    public BusinessException(string message) : base(message)
+    public BusinessException(string message) : this(ErrorCodes.BusinessError, message)
     {
-        Code = "BUSINESS_ERROR";
     }
 
     public BusinessException(string code, string message) : base(message)
@@ -15,8 +16,12 @@ public class BusinessException : Exception
     }
 
     public BusinessException(string message, Exception innerException)
-        : base(message, innerException)
+        : this(ErrorCodes.BusinessError, message, innerException)
     {
-        Code = "BUSINESS_ERROR";
+    }
+
+    public BusinessException(string code, string message, Exception innerException) : base(message, innerException)
+    {
+        Code = code;
     }
 }

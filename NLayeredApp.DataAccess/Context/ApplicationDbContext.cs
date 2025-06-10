@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Entities;
 using NLayeredApp.DataAccess.Seeds;
 
-namespace NLayeredApp.DataAccess;
+namespace NLayeredApp.DataAccess.Context;
 
 public class ApplicationDbContext : DbContext
 {

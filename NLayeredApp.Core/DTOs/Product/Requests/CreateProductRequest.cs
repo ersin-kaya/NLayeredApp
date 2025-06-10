@@ -1,6 +1,6 @@
-namespace NLayeredApp.Core.DTOs.Product;
+namespace NLayeredApp.Core.DTOs.Product.Requests;
 
-public record CreateProductDto
+public record CreateProductRequest
 {
     public string Name { get; init; } = string.Empty;
     public string? Description { get; init; }
@@ -8,9 +8,9 @@ public record CreateProductDto
     public int Stock { get; init; }
     public int CategoryId { get; init; }
 
-    public CreateProductDto() { }
+    public CreateProductRequest() { }
 
-    public CreateProductDto(string name, string? description, decimal price, int stock, int categoryId)
+    public CreateProductRequest(string name, string? description, decimal price, int stock, int categoryId)
     {
         Name = name;
         Description = description;

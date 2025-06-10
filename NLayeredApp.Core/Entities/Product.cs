@@ -1,4 +1,5 @@
 ﻿using NLayeredApp.Core.Common;
+using NLayeredApp.Core.Constants;
 
 namespace NLayeredApp.Core.Entities
 {
@@ -9,11 +10,11 @@ namespace NLayeredApp.Core.Entities
         public decimal Price { get; set; }
         public int Stock { get; set; }
 
-        public bool IsActive { get; set; } = true;
+        public bool IsActive { get; set; } = ApplicationConstants.Product.IsActiveDefault;
 
         public DateTimeOffset? DeletedAt { get; set; }
         public string? DeletedBy { get; set; }
-        public bool IsDeleted { get; set; } = false;
+        public bool IsDeleted { get; set; } = ApplicationConstants.Product.IsDeletedDefault;
 
         public int CategoryId { get; set; }
         public Category Category { get; set; } = null!;

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using NLayeredApp.Core.Constants;
 using NLayeredApp.Core.Entities;
 
 namespace NLayeredApp.DataAccess.Configurations;
@@ -12,7 +13,7 @@ public class FeatureConfiguration : IEntityTypeConfiguration<Feature>
         
         builder.Property(f => f.Value)
             .IsRequired()
-            .HasMaxLength(100);
+            .HasMaxLength(ApplicationConstants.Feature.ValueMaxLength);
 
         builder.HasOne(f => f.CategoryFeatureType)
             .WithMany(cft => cft.Features)

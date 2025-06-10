@@ -1,7 +1,8 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Common;
-using NLayeredApp.Core.Repositories;
+using NLayeredApp.Core.Interfaces.Repositories;
+using NLayeredApp.DataAccess.Context;
 
 namespace NLayeredApp.DataAccess.Repositories;
 
