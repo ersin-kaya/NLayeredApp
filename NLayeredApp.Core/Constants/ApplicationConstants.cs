@@ -2,38 +2,77 @@ namespace NLayeredApp.Core.Constants;
 
 public static class ApplicationConstants
 {
-    // Pagination
-    public const int DefaultPageNumber = 1;
-    public const int DefaultPageSize = 10;
-    public const int MaxPageSize = 100;
+    public static class Pagination
+    {
+        public const int DefaultPageNumber = 1;
+        public const int DefaultPageSize = 10;
+        public const int MaxPageSize = 100;
+        public const int MinPageSize = 1;
+        public const bool DefaultIsDescending = false;
+    }
     
-    // Common audit fields
-    private const int AuditUserNameMaxLength = 100;
+    /// <summary>
+    /// Common default values
+    /// </summary>
+    public static class Defaults
+    {
+        public const bool IncludeInactive = false;
+        public const bool IncludeDeleted = false;
+    }
     
-    public const int CreatedByMaxLength = AuditUserNameMaxLength;
-    public const int LastModifiedByMaxLength = AuditUserNameMaxLength;
-    public const int DeletedByMaxLength = AuditUserNameMaxLength;
+    public static class AuditFields
+    {
+        private const int UserNameMaxLength = 100;
+        
+        public const int CreatedByMaxLength = UserNameMaxLength;
+        public const int LastModifiedByMaxLength = UserNameMaxLength;
+        public const int DeletedByMaxLength = UserNameMaxLength;
+    }
     
-    // Category entity constants
-    public const int CategoryNameMaxLength = 50;
-    public const int CategoryDescriptionMaxLength = 1000;
-    public const bool CategoryIsActive = true;
+    public static class Category
+    {
+        public const int NameMaxLength = 50;
+        public const int DescriptionMaxLength = 1000;
+        public const bool IsActiveDefault = true;
+        public const bool IncludeProductCount = false;
+    }
     
-    // Product entity constants
-    public const int ProductNameMaxLength = 200;
-    public const int ProductDescriptionMaxLength = 2000;
-    public const int ProductPricePrecision = 18;
-    public const int ProductPriceScale = 2;
-    public const bool ProductIsActive = true;
-    public const bool ProductIsDeleted = false;
+    public static class Product
+    {
+        public const int NameMaxLength = 200;
+        public const int DescriptionMaxLength = 2000;
+        public const int PricePrecision = 18;
+        public const int PriceScale = 2;
+        public const bool IsActiveDefault = true;
+        public const bool IsDeletedDefault = false;
+        
+        /// <summary>
+        /// Stock management constants
+        /// </summary>
+        public static class Stock
+        {
+            public const int MinLevel = 0;
+            public const int MaxLevel = 10000;
+            public const int LowThreshold = 10;
+            public const int CriticalThreshold = 5;
+            public const int ReorderPoint = 20;
+            public const int DefaultReorderQuantity = 50;
+        }
+    }
     
-    // CategoryFeatureType entity constants
-    public const int CategoryFeatureTypeLabelMaxLength = 100;
-    public const bool CategoryFeatureTypeIsRequired = false;
-
-    // Feature entity constants
-    public const int FeatureValueMaxLength = 100;
-
-    // FeatureType entity constants
-    public const int FeatureTypeNameMaxLength = 100;
+    public static class CategoryFeatureType
+    {
+        public const int LabelMaxLength = 100;
+        public const bool IsRequiredDefault = false;
+    }
+    
+    public static class Feature
+    {
+        public const int ValueMaxLength = 100;
+    }
+    
+    public static class FeatureType
+    {
+        public const int NameMaxLength = 100;
+    }
 }
