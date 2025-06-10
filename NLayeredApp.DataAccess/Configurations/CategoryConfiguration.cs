@@ -13,13 +13,13 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         
         builder.Property(c => c.Name)
             .IsRequired()
-            .HasMaxLength(ApplicationConstants.CategoryNameMaxLength);
+            .HasMaxLength(ApplicationConstants.Category.NameMaxLength);
 
         builder.Property(c => c.Description)
-            .HasMaxLength(ApplicationConstants.CategoryDescriptionMaxLength);
+            .HasMaxLength(ApplicationConstants.Category.DescriptionMaxLength);
 
         builder.Property(c => c.IsActive)
-            .HasDefaultValue(ApplicationConstants.CategoryIsActive);
+            .HasDefaultValue(ApplicationConstants.Category.IsActiveDefault);
         
         builder.HasIndex(c => c.Name)
             .IsUnique();

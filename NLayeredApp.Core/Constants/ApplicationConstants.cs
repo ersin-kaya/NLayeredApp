@@ -11,9 +11,6 @@ public static class ApplicationConstants
         public const bool DefaultIsDescending = false;
     }
     
-    /// <summary>
-    /// Common audit field constants
-    /// </summary>
     public static class AuditFields
     {
         private const int UserNameMaxLength = 100;
@@ -23,10 +20,12 @@ public static class ApplicationConstants
         public const int DeletedByMaxLength = UserNameMaxLength;
     }
     
-    // Category entity constants
-    public const int CategoryNameMaxLength = 50;
-    public const int CategoryDescriptionMaxLength = 1000;
-    public const bool CategoryIsActive = true;
+    public static class Category
+    {
+        public const int NameMaxLength = 50;
+        public const int DescriptionMaxLength = 1000;
+        public const bool IsActiveDefault = true;
+    }
     
     // Product entity constants
     public const int ProductNameMaxLength = 200;
