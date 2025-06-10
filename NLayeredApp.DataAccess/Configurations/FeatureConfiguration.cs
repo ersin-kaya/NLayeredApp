@@ -13,7 +13,7 @@ public class FeatureConfiguration : IEntityTypeConfiguration<Feature>
         
         builder.Property(f => f.Value)
             .IsRequired()
-            .HasMaxLength(ApplicationConstants.FeatureValueMaxLength);
+            .HasMaxLength(ApplicationConstants.Feature.ValueMaxLength);
 
         builder.HasOne(f => f.CategoryFeatureType)
             .WithMany(cft => cft.Features)

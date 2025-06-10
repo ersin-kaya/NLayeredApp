@@ -55,9 +55,11 @@ public static class ApplicationConstants
         public const int LabelMaxLength = 100;
         public const bool IsRequiredDefault = false;
     }
-
-    // Feature entity constants
-    public const int FeatureValueMaxLength = 100;
+    
+    public static class Feature
+    {
+        public const int ValueMaxLength = 100;
+    }
 
     // FeatureType entity constants
     public const int FeatureTypeNameMaxLength = 100;
