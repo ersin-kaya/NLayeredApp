@@ -25,16 +25,16 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
             .HasDefaultValue(ApplicationConstants.ProductIsActive);
 
         builder.Property(p => p.DeletedBy)
-            .HasMaxLength(ApplicationConstants.DeletedByMaxLength);
+            .HasMaxLength(ApplicationConstants.AuditFields.DeletedByMaxLength);
 
         builder.Property(p => p.IsDeleted)
             .HasDefaultValue(ApplicationConstants.ProductIsDeleted);
         
         builder.Property(e => e.CreatedBy)
-            .HasMaxLength(ApplicationConstants.CreatedByMaxLength);
+            .HasMaxLength(ApplicationConstants.AuditFields.CreatedByMaxLength);
 
         builder.Property(e => e.LastModifiedBy)
-            .HasMaxLength(ApplicationConstants.LastModifiedByMaxLength);
+            .HasMaxLength(ApplicationConstants.AuditFields.LastModifiedByMaxLength);
 
         builder.HasOne(p => p.Category)
             .WithMany(c => c.Products)

@@ -11,12 +11,17 @@ public static class ApplicationConstants
         public const bool DefaultIsDescending = false;
     }
     
-    // Common audit fields
-    private const int AuditUserNameMaxLength = 100;
-    
-    public const int CreatedByMaxLength = AuditUserNameMaxLength;
-    public const int LastModifiedByMaxLength = AuditUserNameMaxLength;
-    public const int DeletedByMaxLength = AuditUserNameMaxLength;
+    /// <summary>
+    /// Common audit field constants
+    /// </summary>
+    public static class AuditFields
+    {
+        private const int UserNameMaxLength = 100;
+        
+        public const int CreatedByMaxLength = UserNameMaxLength;
+        public const int LastModifiedByMaxLength = UserNameMaxLength;
+        public const int DeletedByMaxLength = UserNameMaxLength;
+    }
     
     // Category entity constants
     public const int CategoryNameMaxLength = 50;

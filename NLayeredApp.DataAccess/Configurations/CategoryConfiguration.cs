@@ -25,9 +25,9 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             .IsUnique();
         
         builder.Property(e => e.CreatedBy)
-            .HasMaxLength(ApplicationConstants.CreatedByMaxLength);
+            .HasMaxLength(ApplicationConstants.AuditFields.CreatedByMaxLength);
 
         builder.Property(e => e.LastModifiedBy)
-            .HasMaxLength(ApplicationConstants.LastModifiedByMaxLength);
+            .HasMaxLength(ApplicationConstants.AuditFields.LastModifiedByMaxLength);
     }
 }
