@@ -2,10 +2,14 @@ namespace NLayeredApp.Core.Constants;
 
 public static class ApplicationConstants
 {
-    // Pagination
-    public const int DefaultPageNumber = 1;
-    public const int DefaultPageSize = 10;
-    public const int MaxPageSize = 100;
+    public static class Pagination
+    {
+        public const int DefaultPageNumber = 1;
+        public const int DefaultPageSize = 10;
+        public const int MaxPageSize = 100;
+        public const int MinPageSize = 1;
+        public const bool DefaultIsDescending = false;
+    }
     
     // Common audit fields
     private const int AuditUserNameMaxLength = 100;
