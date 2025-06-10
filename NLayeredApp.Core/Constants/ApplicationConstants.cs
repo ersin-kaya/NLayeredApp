@@ -27,13 +27,28 @@ public static class ApplicationConstants
         public const bool IsActiveDefault = true;
     }
     
-    // Product entity constants
-    public const int ProductNameMaxLength = 200;
-    public const int ProductDescriptionMaxLength = 2000;
-    public const int ProductPricePrecision = 18;
-    public const int ProductPriceScale = 2;
-    public const bool ProductIsActive = true;
-    public const bool ProductIsDeleted = false;
+    public static class Product
+    {
+        public const int NameMaxLength = 200;
+        public const int DescriptionMaxLength = 2000;
+        public const int PricePrecision = 18;
+        public const int PriceScale = 2;
+        public const bool IsActiveDefault = true;
+        public const bool IsDeletedDefault = false;
+        
+        /// <summary>
+        /// Stock management constants
+        /// </summary>
+        public static class Stock
+        {
+            public const int MinLevel = 0;
+            public const int MaxLevel = 10000;
+            public const int LowThreshold = 10;
+            public const int CriticalThreshold = 5;
+            public const int ReorderPoint = 20;
+            public const int DefaultReorderQuantity = 50;
+        }
+    }
     
     // CategoryFeatureType entity constants
     public const int CategoryFeatureTypeLabelMaxLength = 100;

@@ -13,22 +13,22 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         builder.Property(p => p.Name)
             .IsRequired()
-            .HasMaxLength(ApplicationConstants.ProductNameMaxLength);
+            .HasMaxLength(ApplicationConstants.Product.NameMaxLength);
 
         builder.Property(p => p.Description)
-            .HasMaxLength(ApplicationConstants.ProductDescriptionMaxLength);
+            .HasMaxLength(ApplicationConstants.Product.DescriptionMaxLength);
 
         builder.Property(p => p.Price)
-            .HasPrecision(ApplicationConstants.ProductPricePrecision, ApplicationConstants.ProductPriceScale);
+            .HasPrecision(ApplicationConstants.Product.PricePrecision, ApplicationConstants.Product.PriceScale);
 
         builder.Property(p => p.IsActive)
-            .HasDefaultValue(ApplicationConstants.ProductIsActive);
+            .HasDefaultValue(ApplicationConstants.Product.IsActiveDefault);
 
         builder.Property(p => p.DeletedBy)
             .HasMaxLength(ApplicationConstants.AuditFields.DeletedByMaxLength);
 
         builder.Property(p => p.IsDeleted)
-            .HasDefaultValue(ApplicationConstants.ProductIsDeleted);
+            .HasDefaultValue(ApplicationConstants.Product.IsDeletedDefault);
         
         builder.Property(e => e.CreatedBy)
             .HasMaxLength(ApplicationConstants.AuditFields.CreatedByMaxLength);
