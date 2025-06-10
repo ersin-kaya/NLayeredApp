@@ -12,10 +12,10 @@ public class CategoryFeatureTypeConfiguration : IEntityTypeConfiguration<Categor
         builder.HasKey(cft => new { cft.CategoryId, cft.FeatureTypeId });
 
         builder.Property(cft => cft.Label)
-            .HasMaxLength(ApplicationConstants.CategoryFeatureTypeLabelMaxLength);
+            .HasMaxLength(ApplicationConstants.CategoryFeatureType.LabelMaxLength);
 
         builder.Property(cft => cft.IsRequired)
-            .HasDefaultValue(ApplicationConstants.CategoryFeatureTypeIsRequired);
+            .HasDefaultValue(ApplicationConstants.CategoryFeatureType.IsRequiredDefault);
 
         builder.HasOne(cft => cft.Category)
             .WithMany(c => c.CategoryFeatureTypes)

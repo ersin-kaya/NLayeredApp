@@ -50,9 +50,11 @@ public static class ApplicationConstants
         }
     }
     
-    // CategoryFeatureType entity constants
-    public const int CategoryFeatureTypeLabelMaxLength = 100;
-    public const bool CategoryFeatureTypeIsRequired = false;
+    public static class CategoryFeatureType
+    {
+        public const int LabelMaxLength = 100;
+        public const bool IsRequiredDefault = false;
+    }
 
     // Feature entity constants
     public const int FeatureValueMaxLength = 100;
