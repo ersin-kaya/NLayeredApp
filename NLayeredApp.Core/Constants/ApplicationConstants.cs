@@ -60,7 +60,9 @@ public static class ApplicationConstants
     {
         public const int ValueMaxLength = 100;
     }
-
-    // FeatureType entity constants
-    public const int FeatureTypeNameMaxLength = 100;
+    
+    public static class FeatureType
+    {
+        public const int NameMaxLength = 100;
+    }
 }

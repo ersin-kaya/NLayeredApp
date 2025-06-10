@@ -13,7 +13,7 @@ public class FeatureTypeConfiguration : IEntityTypeConfiguration<FeatureType>
         
         builder.Property(ft => ft.Name)
             .IsRequired()
-            .HasMaxLength(ApplicationConstants.FeatureTypeNameMaxLength);
+            .HasMaxLength(ApplicationConstants.FeatureType.NameMaxLength);
 
         builder.HasIndex(ft => ft.Name)
             .IsUnique();
