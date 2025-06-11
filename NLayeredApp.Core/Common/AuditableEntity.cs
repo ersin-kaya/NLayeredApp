@@ -1,6 +1,6 @@
 ﻿namespace NLayeredApp.Core.Common
 {
-    public abstract class AuditableEntity : BaseEntity
+    public abstract class AuditableEntity : BaseEntity, IAuditable
     {
         public DateTimeOffset CreatedAt { get; set; }
         public string? CreatedBy { get; set; }
