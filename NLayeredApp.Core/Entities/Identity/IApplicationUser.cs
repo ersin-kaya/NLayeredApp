@@ -8,4 +8,5 @@ public interface IApplicationUser : IEntity, IAuditable, IActivatable, ISoftDele
     string Email { get; set; }
     string FirstName { get; set; }
     string LastName { get; set; }
+    bool EmailConfirmed { get; set; }
 }
