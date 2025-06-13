@@ -2,7 +2,7 @@ using NLayeredApp.Core.DTOs.Product.Responses;
 
 namespace NLayeredApp.Core.DTOs.Category.Responses;
 
-public record CategoryDetailDto
+public record CategoryDetailResponse
 {
     public int Id { get; init; }
     public string Name { get; init; } = string.Empty;
@@ -15,9 +15,9 @@ public record CategoryDetailDto
     public List<ProductSummaryDto> Products { get; init; } = new();
     public int ProductCount => Products.Count;
 
-    public CategoryDetailDto() { }
+    public CategoryDetailResponse() { }
 
-    public CategoryDetailDto(int id, string name, string? description, bool isActive,
+    public CategoryDetailResponse(int id, string name, string? description, bool isActive,
         DateTimeOffset createdAt, string? createdBy, 
         DateTimeOffset? lastModifiedAt, string? lastModifiedBy,
         List<ProductSummaryDto> products)
