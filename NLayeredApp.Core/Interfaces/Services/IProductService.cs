@@ -1,4 +1,5 @@
 using NLayeredApp.Core.DTOs.Common;
+using NLayeredApp.Core.DTOs.Product;
 using NLayeredApp.Core.DTOs.Product.Requests;
 using NLayeredApp.Core.DTOs.Product.Responses;
 
