@@ -2,7 +2,7 @@ using NLayeredApp.Core.DTOs.Category;
 
 namespace NLayeredApp.Core.DTOs.Product.Responses;
 
-public record ProductDetailDto
+public record ProductDetailResponse
 {
     public int Id { get; init; }
     public string Name { get; init; } = string.Empty;
@@ -20,9 +20,9 @@ public record ProductDetailDto
     public bool IsDeleted { get; init; }
     public bool InStock => Stock > 0;
 
-    public ProductDetailDto() { }
+    public ProductDetailResponse() { }
 
-    public ProductDetailDto(int id, string name, string? description, decimal price,
+    public ProductDetailResponse(int id, string name, string? description, decimal price,
         int stock, bool isActive, CategoryDto category, DateTimeOffset createdAt, string? createdBy,
         DateTimeOffset? lastModifiedAt, string? lastModifiedBy, 
         DateTimeOffset? deletedAt, string? deletedBy, bool isDeleted)
