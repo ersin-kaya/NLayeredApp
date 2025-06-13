@@ -8,7 +8,7 @@ namespace NLayeredApp.Core.Interfaces.Services;
 public interface ICategoryService
 {
     Task<PagedResponse<CategoryDto>> GetAllAsync(GetCategoriesRequest request);
-    Task<CategoryDetailResponse> GetByIdAsync(int id);
+    Task<CategoryDetailDto> GetByIdAsync(int id);
     Task<CategoryDto> CreateAsync(CreateCategoryRequest request);
     Task<CategoryDto> UpdateAsync(UpdateCategoryRequest request);
     Task DeleteAsync(int id);
