@@ -1,6 +1,6 @@
 using NLayeredApp.Core.DTOs.Product;
 
-namespace NLayeredApp.Core.DTOs.Category.Responses;
+namespace NLayeredApp.Core.DTOs.Category;
 
 public record CategoryDetailDto
 {

@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="DTOs\Auth\Requests\" />
     <Folder Include="DTOs\Auth\Responses\" />
+    <Folder Include="DTOs\Category\Responses\" />
   </ItemGroup>
 
 </Project>
