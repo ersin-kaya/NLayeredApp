@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\Auth\Requests\" />
+    <Folder Include="DTOs\Auth\Responses\" />
+  </ItemGroup>
+
 </Project>
