@@ -7,7 +7,7 @@ namespace NLayeredApp.Core.Interfaces.Services;
 public interface IProductService
 {
     Task<PagedResponse<ProductDto>> GetAllAsync(GetProductsRequest request);
-    Task<ProductDetailResponse> GetByIdAsync(int id);
+    Task<ProductDetailDto> GetByIdAsync(int id);
     Task<ProductDto> CreateAsync(CreateProductRequest request);
     Task<ProductDto> UpdateAsync(UpdateProductRequest request);
     Task DeleteAsync(int id);
