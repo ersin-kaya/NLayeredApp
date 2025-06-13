@@ -1,4 +1,4 @@
-namespace NLayeredApp.Core.DTOs.Authentication.Responses;
+namespace NLayeredApp.Core.DTOs.Auth.Responses;
 
 public class AuthenticationResult
 {

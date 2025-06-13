@@ -1,4 +1,4 @@
-namespace NLayeredApp.Core.DTOs.Authentication.Requests;
+namespace NLayeredApp.Core.DTOs.Auth.Requests;
 
 public class RegisterRequest
 {
