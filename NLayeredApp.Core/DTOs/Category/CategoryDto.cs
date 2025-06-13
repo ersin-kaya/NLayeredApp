@@ -1,4 +1,4 @@
-namespace NLayeredApp.Core.DTOs.Category.Responses;
+namespace NLayeredApp.Core.DTOs.Category;
 
 public record CategoryDto
 {
