@@ -1,3 +1,5 @@
+using NLayeredApp.Core.DTOs.Identity;
+
 namespace NLayeredApp.Core.DTOs.Auth.Responses;
 
 public class RegisterResponse
