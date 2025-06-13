@@ -1,4 +1,4 @@
-using NLayeredApp.Core.DTOs.Product.Responses;
+using NLayeredApp.Core.DTOs.Product;
 
 namespace NLayeredApp.Core.DTOs.Category.Responses;
 
