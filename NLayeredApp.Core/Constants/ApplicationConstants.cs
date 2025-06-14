@@ -28,6 +28,11 @@ public static class ApplicationConstants
         public const int LastModifiedByMaxLength = UserNameMaxLength;
         public const int DeletedByMaxLength = UserNameMaxLength;
     }
+
+    public static class User
+    {
+        public const bool IsActiveDefault = true;
+    }
     
     public static class Category
     {
