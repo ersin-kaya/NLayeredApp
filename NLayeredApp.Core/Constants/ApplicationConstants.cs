@@ -29,10 +29,19 @@ public static class ApplicationConstants
         public const int DeletedByMaxLength = UserNameMaxLength;
     }
 
-    public static class User
+    public static class Identity
     {
-        public const bool IsActiveDefault = true;
-        public const bool IsDeletedDefault = false;
+        public static class User
+        {
+            public const bool IsActiveDefault = true;
+            public const bool IsDeletedDefault = false;
+        }
+
+        public static class Role
+        {
+            public const bool IsActiveDefault = true;
+            public const bool IsDeletedDefault = false;
+        }
     }
     
     public static class Category
