@@ -1,4 +1,5 @@
 ﻿using NLayeredApp.Core.Interfaces.Repositories;
+using NLayeredApp.Core.Interfaces.Repositories.Auth;
 
 namespace NLayeredApp.Core.Interfaces.UnitOfWork
 {
@@ -6,6 +7,7 @@ namespace NLayeredApp.Core.Interfaces.UnitOfWork
     {
         ICategoryRepository Categories { get; }
         IProductRepository Products { get; }
+        IRefreshTokenRepository RefreshTokens { get; }
         
         Task<int> SaveChangesAsync();
         Task BeginTransactionAsync();
