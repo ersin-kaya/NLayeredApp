@@ -19,4 +19,7 @@ public class ApplicationUser : IdentityUser<int>, IApplicationUser
     public DateTimeOffset? DeletedAt { get; set; }
     public string? DeletedBy { get; set; }
     public bool IsDeleted { get; set; } = ApplicationConstants.Identity.User.IsDeletedDefault;
+    
+    public virtual ICollection<ApplicationUserRole> UserRoles { get; set; } = new List<ApplicationUserRole>();
+    public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
 }

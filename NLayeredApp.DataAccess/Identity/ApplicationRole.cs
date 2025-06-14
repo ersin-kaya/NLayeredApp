@@ -18,4 +18,6 @@ public class ApplicationRole : IdentityRole<int>, IApplicationRole
     public DateTimeOffset? DeletedAt { get; set; }
     public string? DeletedBy { get; set; }
     public bool IsDeleted { get; set; } = ApplicationConstants.Identity.Role.IsDeletedDefault;
+    
+    public virtual ICollection<ApplicationUserRole> UserRoles { get; set; } = new List<ApplicationUserRole>();
 }
