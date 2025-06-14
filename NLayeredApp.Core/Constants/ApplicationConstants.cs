@@ -32,6 +32,7 @@ public static class ApplicationConstants
     public static class User
     {
         public const bool IsActiveDefault = true;
+        public const bool IsDeletedDefault = false;
     }
     
     public static class Category
