@@ -11,6 +11,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
         builder.HasKey(c => c.Id);
         
+        // Properties
         builder.Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(ApplicationConstants.Category.NameMaxLength);
@@ -21,13 +22,13 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.Property(c => c.IsActive)
             .HasDefaultValue(ApplicationConstants.Category.IsActiveDefault);
         
-        builder.HasIndex(c => c.Name)
-            .IsUnique();
-        
         builder.Property(e => e.CreatedBy)
             .HasMaxLength(ApplicationConstants.AuditFields.CreatedByMaxLength);
 
         builder.Property(e => e.LastModifiedBy)
             .HasMaxLength(ApplicationConstants.AuditFields.LastModifiedByMaxLength);
+        
+        // Indexes
+        builder.HasIndex(c => c.Name).IsUnique();
     }
 }
