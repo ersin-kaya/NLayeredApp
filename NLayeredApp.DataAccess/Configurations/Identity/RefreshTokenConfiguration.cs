@@ -11,16 +11,19 @@ public class RefreshTokenConfiguration : IEntityTypeConfiguration<RefreshToken>
         builder.ToTable("RefreshTokens");
         
         builder.HasKey(rt => rt.Id);
-
+        
+        // Properties
         builder.Property(rt => rt.Token)
             .IsRequired()
             .HasMaxLength(500);
         
+        // Relationships
         builder.HasOne(rt => rt.User)
             .WithMany(u => u.RefreshTokens)
             .HasForeignKey(rt => rt.UserId)
             .IsRequired();
         
+        // Indexes
         builder.HasIndex(rt => rt.Token).IsUnique();
         builder.HasIndex(rt => new { rt.UserId, rt.IsRevoked });
     }

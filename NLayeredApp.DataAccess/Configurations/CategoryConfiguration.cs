@@ -11,7 +11,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
         builder.HasKey(c => c.Id);
         
-        // Properties
+        #region Properties
         builder.Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(ApplicationConstants.Category.NameMaxLength);
@@ -27,6 +27,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 
         builder.Property(e => e.LastModifiedBy)
             .HasMaxLength(ApplicationConstants.AuditFields.LastModifiedByMaxLength);
+        #endregion
         
         // Indexes
         builder.HasIndex(c => c.Name).IsUnique();

@@ -11,10 +11,12 @@ public class FeatureConfiguration : IEntityTypeConfiguration<Feature>
     {
         builder.HasKey(f => f.Id);
         
+        // Properties
         builder.Property(f => f.Value)
             .IsRequired()
             .HasMaxLength(ApplicationConstants.Feature.ValueMaxLength);
 
+        // Relationships
         builder.HasOne(f => f.CategoryFeatureType)
             .WithMany(cft => cft.Features)
             .HasForeignKey(f => new { f.CategoryId, f.FeatureTypeId })

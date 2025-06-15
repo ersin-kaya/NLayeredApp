@@ -11,7 +11,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
         builder.HasKey(p => p.Id);
 
-        // Properties
+        #region Properties
         builder.Property(p => p.Name)
             .IsRequired()
             .HasMaxLength(ApplicationConstants.Product.NameMaxLength);
@@ -36,6 +36,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         builder.Property(e => e.LastModifiedBy)
             .HasMaxLength(ApplicationConstants.AuditFields.LastModifiedByMaxLength);
+        #endregion
 
         // Relationships
         builder.HasOne(p => p.Category)

@@ -10,6 +10,7 @@ public class ProductFeatureTypeConfiguration : IEntityTypeConfiguration<ProductF
     {
         builder.HasKey(pft => new { pft.ProductId, pft.FeatureTypeId });
 
+        // Relationships
         builder.HasOne(pft => pft.Product)
             .WithMany(p => p.ProductFeatureTypes)
             .HasForeignKey(pft => pft.ProductId)
@@ -25,6 +26,7 @@ public class ProductFeatureTypeConfiguration : IEntityTypeConfiguration<ProductF
             .HasForeignKey(pft => pft.FeatureId)
             .OnDelete(DeleteBehavior.Restrict);
         
+        // Indexes
         builder.HasIndex(pft => pft.FeatureId);
     }
 }

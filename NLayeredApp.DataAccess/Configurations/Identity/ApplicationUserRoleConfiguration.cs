@@ -12,6 +12,11 @@ public class ApplicationUserRoleConfiguration : IEntityTypeConfiguration<Applica
         
         builder.HasKey(ur => new { ur.UserId, ur.RoleId });
         
+        // Properties
+        builder.Property(ur => ur.AssignedBy)
+            .HasMaxLength(256);
+        
+        // Relationships
         builder.HasOne(ur => ur.User)
             .WithMany(u => u.UserRoles)
             .HasForeignKey(ur => ur.UserId)
@@ -21,9 +26,5 @@ public class ApplicationUserRoleConfiguration : IEntityTypeConfiguration<Applica
             .WithMany(r => r.UserRoles)
             .HasForeignKey(ur => ur.RoleId)
             .IsRequired();
-        
-        // Properties
-        builder.Property(ur => ur.AssignedBy)
-            .HasMaxLength(256);
     }
 }

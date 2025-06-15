@@ -11,10 +11,12 @@ public class FeatureTypeConfiguration : IEntityTypeConfiguration<FeatureType>
     {
         builder.HasKey(ft => ft.Id);
         
+        // Properties
         builder.Property(ft => ft.Name)
             .IsRequired()
             .HasMaxLength(ApplicationConstants.FeatureType.NameMaxLength);
 
+        // Indexes
         builder.HasIndex(ft => ft.Name)
             .IsUnique();
     }

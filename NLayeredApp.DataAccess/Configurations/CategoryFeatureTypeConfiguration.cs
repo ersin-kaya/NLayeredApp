@@ -11,12 +11,14 @@ public class CategoryFeatureTypeConfiguration : IEntityTypeConfiguration<Categor
     {
         builder.HasKey(cft => new { cft.CategoryId, cft.FeatureTypeId });
 
+        // Properties
         builder.Property(cft => cft.Label)
             .HasMaxLength(ApplicationConstants.CategoryFeatureType.LabelMaxLength);
 
         builder.Property(cft => cft.IsRequired)
             .HasDefaultValue(ApplicationConstants.CategoryFeatureType.IsRequiredDefault);
 
+        // Relationships
         builder.HasOne(cft => cft.Category)
             .WithMany(c => c.CategoryFeatureTypes)
             .HasForeignKey(cft => cft.CategoryId)

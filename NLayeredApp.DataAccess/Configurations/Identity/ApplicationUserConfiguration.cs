@@ -19,11 +19,11 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             .IsRequired()
             .HasMaxLength(100);
         
-        // Global Query Filter
-        builder.HasQueryFilter(u => !u.IsDeleted);
-        
         // Indexes
         builder.HasIndex(u => u.Email).IsUnique();
         builder.HasIndex(u => u.UserName).IsUnique();
+        
+        // Global Query Filter
+        builder.HasQueryFilter(u => !u.IsDeleted);
     }
 }
