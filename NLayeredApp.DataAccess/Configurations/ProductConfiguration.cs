@@ -11,6 +11,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
         builder.HasKey(p => p.Id);
 
+        // Properties
         builder.Property(p => p.Name)
             .IsRequired()
             .HasMaxLength(ApplicationConstants.Product.NameMaxLength);
@@ -36,13 +37,18 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.Property(e => e.LastModifiedBy)
             .HasMaxLength(ApplicationConstants.AuditFields.LastModifiedByMaxLength);
 
+        // Relationships
         builder.HasOne(p => p.Category)
             .WithMany(c => c.Products)
             .HasForeignKey(p => p.CategoryId)
             .OnDelete(DeleteBehavior.Restrict);
-
+        
+        // Indexes
         builder.HasIndex(p => p.Name);
         builder.HasIndex(p => p.CategoryId);
         builder.HasIndex(p => new { p.CategoryId, p.Price });
+        
+        // Global Query Filter
+        builder.HasQueryFilter(p => !p.IsDeleted);
     }
 }
