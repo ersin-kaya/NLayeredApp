@@ -4,6 +4,7 @@ using NLayeredApp.Core.Interfaces.Repositories.Auth;
 using NLayeredApp.Core.Interfaces.UnitOfWork;
 using NLayeredApp.DataAccess.Context;
 using NLayeredApp.DataAccess.Repositories;
+using NLayeredApp.DataAccess.Repositories.Auth;
 
 namespace NLayeredApp.DataAccess.UnitOfWork;
 
