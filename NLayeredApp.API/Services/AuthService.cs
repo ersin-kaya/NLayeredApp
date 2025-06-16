@@ -86,9 +86,69 @@ public class AuthService : IAuthService
         };
     }
 
-    public Task<RegisterResponse> RegisterAsync(RegisterRequest request)
+    public async Task<RegisterResponse> RegisterAsync(RegisterRequest request)
     {
-        throw new NotImplementedException();
+        // Check existing email
+        if (await _userManager.FindByEmailAsync(request.Email) != null)
+        {
+            return new RegisterResponse
+            {
+                IsSuccess = false,
+                Errors = new List<string> { "Email already exists." }
+            };
+        }
+        
+        // Check existing username
+        if (await _userManager.FindByNameAsync(request.Username) != null)
+        {
+            return new RegisterResponse
+            {
+                IsSuccess = false,
+                Errors = new List<string> { "Username already exists." }
+            };
+        }
+
+        var user = new ApplicationUser
+        {
+            UserName = request.Username,
+            Email = request.Email,
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            CreatedAt = DateTimeOffset.Now,
+        };
+        
+        var result = await _userManager.CreateAsync(user, request.Password);
+        if (!result.Succeeded)
+        {
+            return new RegisterResponse
+            {
+                IsSuccess = false,
+                Errors = result.Errors.Select(e => e.Description).ToList()
+            };
+        }
+        
+        // Add to default role
+        await _userManager.AddToRoleAsync(user, "User");
+        
+        // Generate email confirmation token (TODO: Send email)
+        var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+        return new RegisterResponse
+        {
+            IsSuccess = true,
+            User = new UserDto
+            {
+                Id = user.Id,
+                Username = user.UserName,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                IsActive = user.IsActive,
+                EmailConfirmed = user.EmailConfirmed,
+                CreatedAt = user.CreatedAt,
+                Roles = new List<string> { "User" }
+            }
+        };
     }
 
     public Task LogoutAsync()
