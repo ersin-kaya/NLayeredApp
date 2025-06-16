@@ -23,6 +23,8 @@ public static class SeedDataManager
         ProductSeed.Apply(modelBuilder);
             
         // Order 3: Multiple dependency tables (2+ foreign keys)
+        ApplicationUserRoleSeed.Apply(modelBuilder);
+        
         ProductFeatureTypeSeed.Apply(modelBuilder);
     }
 }

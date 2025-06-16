@@ -41,6 +41,17 @@ public static class SeedHelpers
         user.PasswordHash = hasher.HashPassword(user, password);
         return user;
     }
+
+    public static ApplicationUserRole CreateUserRole(int userId, int roleId)
+    {
+        return new ApplicationUserRole
+        {
+            UserId = userId,
+            RoleId = roleId,
+            AssignedAt = SeedConstants.Common.CreatedAt,
+            AssignedBy = SeedConstants.Common.CreatedBy,
+        };
+    }
     
     // Domain entities
     public static Category CreateCategory(SeedConstants.CategoryIds id, string name, string? description = null)
