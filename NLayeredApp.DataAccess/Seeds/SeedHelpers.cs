@@ -1,9 +1,25 @@
 using NLayeredApp.Core.Entities;
+using NLayeredApp.DataAccess.Identity;
 
 namespace NLayeredApp.DataAccess.Seeds;
 
 public static class SeedHelpers
 {
+    // Identity
+    public static ApplicationRole CreateRole(int id, string name, string? description = null)
+    {
+        return new ApplicationRole
+        {
+            Id = id,
+            Name = name,
+            NormalizedName = name.ToUpperInvariant(),
+            Description = description,
+            IsActive = SeedConstants.Common.IsActive,
+            CreatedAt = SeedConstants.Common.CreatedAt
+        };
+    }
+    
+    // Domain entities
     public static Category CreateCategory(SeedConstants.CategoryIds id, string name, string? description = null)
     {
         return new Category

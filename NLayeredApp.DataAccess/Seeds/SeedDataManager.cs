@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using NLayeredApp.DataAccess.Seeds.Identity;
 
 namespace NLayeredApp.DataAccess.Seeds;
 
@@ -10,6 +11,7 @@ public static class SeedDataManager
             throw new ArgumentNullException(nameof(modelBuilder));
 
         // Order 1: Main/Independent tables (no foreign keys)
+        ApplicationRoleSeed.Apply(modelBuilder);
         CategorySeed.Apply(modelBuilder);
         FeatureTypeSeed.Apply(modelBuilder);
             
