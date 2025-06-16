@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using NLayeredApp.Core.Entities;
 using NLayeredApp.DataAccess.Identity;
 
@@ -17,6 +18,28 @@ public static class SeedHelpers
             IsActive = SeedConstants.Common.IsActive,
             CreatedAt = SeedConstants.Common.CreatedAt
         };
+    }
+
+    public static ApplicationUser CreateUser(int id, string name, string email, bool emailConfirmed, string firstName, string lastName, string password)
+    {
+        var hasher = new PasswordHasher<ApplicationUser>();
+        var user = new ApplicationUser
+        {
+            Id = id,
+            UserName = name,
+            NormalizedUserName = name.ToUpperInvariant(),
+            Email = email,
+            NormalizedEmail = email.ToUpperInvariant(),
+            EmailConfirmed = emailConfirmed,
+            FirstName = firstName,
+            LastName = lastName,
+            IsActive = SeedConstants.Common.IsActive,
+            SecurityStamp = Guid.NewGuid().ToString(),
+            CreatedAt = SeedConstants.Common.CreatedAt,
+            CreatedBy = SeedConstants.Common.CreatedBy,
+        };
+        user.PasswordHash = hasher.HashPassword(user, password);
+        return user;
     }
     
     // Domain entities

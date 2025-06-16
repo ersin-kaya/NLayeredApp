@@ -12,6 +12,8 @@ public static class SeedDataManager
 
         // Order 1: Main/Independent tables (no foreign keys)
         ApplicationRoleSeed.Apply(modelBuilder);
+        ApplicationUserSeed.Apply(modelBuilder);
+        
         CategorySeed.Apply(modelBuilder);
         FeatureTypeSeed.Apply(modelBuilder);
             
