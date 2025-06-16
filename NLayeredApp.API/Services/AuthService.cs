@@ -1,0 +1,123 @@
+using Microsoft.AspNetCore.Identity;
+using NLayeredApp.Core.DTOs.Auth.Requests;
+using NLayeredApp.Core.DTOs.Auth.Responses;
+using NLayeredApp.Core.DTOs.Identity;
+using NLayeredApp.Core.Interfaces.Services.Auth;
+using NLayeredApp.DataAccess.Identity;
+
+namespace NLayeredApp.API.Services;
+
+public class AuthService : IAuthService
+{
+    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly ITokenService _tokenService;
+    
+    public AuthService(
+        UserManager<ApplicationUser> userManager,
+        SignInManager<ApplicationUser> signInManager,
+        ITokenService tokenService)
+    {
+        _userManager = userManager;
+        _signInManager = signInManager;
+        _tokenService = tokenService;
+    }
+    
+    public async Task<LoginResponse> LoginAsync(LoginRequest request)
+    {
+        var user = await _userManager.FindByNameAsync(request.UsernameOrEmail)
+                   ?? await _userManager.FindByEmailAsync(request.UsernameOrEmail);
+
+        if (user == null || user.IsDeleted)
+        {
+            return new LoginResponse()
+            {
+                IsSuccess = false,
+                Errors = new List<string> { "Invalid username or password." }
+            };
+        }
+
+        if (!user.IsActive)
+        {
+            return new LoginResponse
+            {
+                IsSuccess = false,
+                Errors = new List<string> { "Account is not active." }
+            };
+        }
+
+        var result = await _signInManager.PasswordSignInAsync(
+            user, request.Password, request.RememberMe, lockoutOnFailure: true);
+
+        if (!result.Succeeded)
+        {
+            var errors = new List<string>();
+            if (result.IsLockedOut)
+                errors.Add("Account is locked out.");
+            else if (result.IsNotAllowed)
+                errors.Add("Email confirmation required.");
+            else
+                errors.Add("Invalid username or password.");
+
+            return new LoginResponse { IsSuccess = false, Errors = errors };
+        }
+        
+        var tokenResponse = await _tokenService.GenerateTokenAsync(user);
+        var roles = await _userManager.GetRolesAsync(user);
+
+        return new LoginResponse
+        {
+            IsSuccess = true,
+            Token = tokenResponse.Token,
+            RefreshToken = tokenResponse.RefreshToken,
+            ExpiresAt = tokenResponse.ExpiresAt,
+            User = new UserDto
+            {
+                Id = user.Id,
+                Username = user.UserName,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                IsActive = user.IsActive,
+                EmailConfirmed = user.EmailConfirmed,
+                CreatedAt = user.CreatedAt,
+                Roles = roles.ToList()
+            }
+        };
+    }
+
+    public Task<RegisterResponse> RegisterAsync(RegisterRequest request)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task LogoutAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<bool> RevokeTokenAsync(string refreshToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<bool> ConfirmEmailAsync(ConfirmEmailRequest request)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<bool> ForgotPasswordAsync(ForgotPasswordRequest request)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<bool> ResetPasswordAsync(ResetPasswordRequest request)
+    {
+        throw new NotImplementedException();
+    }
+}
