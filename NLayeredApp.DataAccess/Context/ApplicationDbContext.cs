@@ -2,11 +2,11 @@ using System.Reflection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using NLayeredApp.Core.Common;
 using NLayeredApp.Core.Entities;
 using NLayeredApp.Core.Interfaces.Services.Auth;
 using NLayeredApp.DataAccess.Configurations.Identity;
 using NLayeredApp.DataAccess.Identity;
+using NLayeredApp.DataAccess.Interceptors;
 using NLayeredApp.DataAccess.Seeds;
 
 namespace NLayeredApp.DataAccess.Context;
@@ -21,7 +21,8 @@ public class ApplicationDbContext : IdentityDbContext<
     IdentityRoleClaim<int>,
     IdentityUserToken<int>>
 {
-    private readonly ICurrentUserService? _currentUserService;
+    private readonly AuditableEntityInterceptor _auditInterceptor = null!;
+    private readonly SoftDeleteInterceptor _softDeleteInterceptor = null!;
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
@@ -29,9 +30,11 @@ public class ApplicationDbContext : IdentityDbContext<
 
     public ApplicationDbContext(
         DbContextOptions<ApplicationDbContext> options,
-        ICurrentUserService? currentUserService) : base(options)
+        AuditableEntityInterceptor auditInterceptor,
+        SoftDeleteInterceptor softDeleteInterceptor) : base(options)
     {
-        _currentUserService = currentUserService;
+        _auditInterceptor = auditInterceptor;
+        _softDeleteInterceptor = softDeleteInterceptor;
     }
 
     // Domain entities
@@ -45,6 +48,11 @@ public class ApplicationDbContext : IdentityDbContext<
     // Identity
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.AddInterceptors(_auditInterceptor, _softDeleteInterceptor);
+    }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -55,48 +63,5 @@ public class ApplicationDbContext : IdentityDbContext<
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         
         SeedDataManager.ApplySeedData(modelBuilder);
-    }
-
-    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-    {
-        var currentUsername = _currentUserService?.Username ?? "System";
-        var currentTime = DateTimeOffset.Now;
-        
-        // Handle audit fields
-        var entries = ChangeTracker.Entries()
-            .Where(e => e.Entity is AuditableEntity &&
-                        e.State is EntityState.Added or EntityState.Modified);
-
-        foreach (var entry in entries)
-        {
-            var entity = (AuditableEntity)entry.Entity;
-
-            if (entry.State == EntityState.Added)
-            {
-                entity.CreatedAt = currentTime;
-                entity.CreatedBy = currentUsername;
-            }
-            else
-            {
-                entity.LastModifiedAt = currentTime;
-                entity.LastModifiedBy = currentUsername;
-            }
-        }
-        
-        // Handle soft delete
-        var deletedEntries = ChangeTracker.Entries()
-            .Where(e => e.Entity is ISoftDeletable && 
-                        e.State == EntityState.Deleted);
-
-        foreach (var entry in deletedEntries)
-        {
-            entry.State = EntityState.Modified;
-            var entity = (ISoftDeletable)entry.Entity;
-            entity.IsDeleted = true;
-            entity.DeletedAt = currentTime;
-            entity.DeletedBy = currentUsername;
-        }
-        
-        return await base.SaveChangesAsync(cancellationToken);
     }
 }

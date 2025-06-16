@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Interfaces.Repositories;
 using NLayeredApp.Core.Interfaces.UnitOfWork;
 using NLayeredApp.DataAccess.Context;
+using NLayeredApp.DataAccess.Interceptors;
 using NLayeredApp.DataAccess.Repositories;
 using NLayeredApp.DataAccess.UnitOfWork;
 
@@ -17,6 +18,9 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                        ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+builder.Services.AddScoped<AuditableEntityInterceptor>();
+builder.Services.AddScoped<SoftDeleteInterceptor>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString, b =>
