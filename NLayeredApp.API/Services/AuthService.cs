@@ -151,9 +151,9 @@ public class AuthService : IAuthService
         };
     }
 
-    public Task LogoutAsync()
+    public async Task LogoutAsync()
     {
-        throw new NotImplementedException();
+        await _signInManager.SignOutAsync();
     }
 
     public Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken)
