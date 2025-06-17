@@ -156,9 +156,15 @@ public class AuthService : IAuthService
         await _signInManager.SignOutAsync();
     }
 
-    public Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken)
+    public async Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken)
     {
-        throw new NotImplementedException();
+        var isValid = await _tokenService.ValidateRefreshTokenAsync(refreshToken);
+        if (!isValid)
+        {
+            throw new UnauthorizedAccessException("Invalid refresh token.");
+        }
+        
+        return await _tokenService.RefreshTokenAsync(refreshToken);
     }
 
     public Task<bool> RevokeTokenAsync(string refreshToken)

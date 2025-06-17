@@ -9,6 +9,7 @@ public interface ITokenService
     Task<string?> ValidateTokenAsync(string token);
     Task<RefreshToken> GenerateRefreshTokenAsync(int userId);
     Task<bool> ValidateRefreshTokenAsync(string refreshToken);
+    Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken);
     Task<bool> RevokeTokenAsync(string refreshToken);
     Task<bool> RevokeAllUserTokensAsync(int userId);
 }
