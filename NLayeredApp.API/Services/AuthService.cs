@@ -194,8 +194,13 @@ public class AuthService : IAuthService
         return true;
     }
 
-    public Task<bool> ResetPasswordAsync(ResetPasswordRequest request)
+    public async Task<bool> ResetPasswordAsync(ResetPasswordRequest request)
     {
-        throw new NotImplementedException();
+        var user = await _userManager.FindByEmailAsync(request.Email);
+        if (user == null)
+            return false;
+        
+        var result = await _userManager.ResetPasswordAsync(user, request.Token, request.NewPassword);
+        return result.Succeeded;
     }
 }
