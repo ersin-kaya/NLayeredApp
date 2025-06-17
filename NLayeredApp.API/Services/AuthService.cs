@@ -182,9 +182,16 @@ public class AuthService : IAuthService
         return result.Succeeded;
     }
 
-    public Task<bool> ForgotPasswordAsync(ForgotPasswordRequest request)
+    public async Task<bool> ForgotPasswordAsync(ForgotPasswordRequest request)
     {
-        throw new NotImplementedException();
+        var user = await _userManager.FindByEmailAsync(request.Email);
+        if (user == null || !user.IsActive || user.IsDeleted)
+            return true; // Don't reveal if user exists
+
+        var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+        // TODO: Send email with token
+
+        return true;
     }
 
     public Task<bool> ResetPasswordAsync(ResetPasswordRequest request)
