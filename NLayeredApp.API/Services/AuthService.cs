@@ -197,8 +197,8 @@ public class AuthService : IAuthService
     public async Task<bool> ResetPasswordAsync(ResetPasswordRequest request)
     {
         var user = await _userManager.FindByEmailAsync(request.Email);
-        if (user == null)
-            return false;
+        if (user == null || !user.IsActive || user.IsDeleted)
+            return true; // Don't reveal if user exists
         
         var result = await _userManager.ResetPasswordAsync(user, request.Token, request.NewPassword);
         return result.Succeeded;
