@@ -167,9 +167,9 @@ public class AuthService : IAuthService
         return await _tokenService.RefreshTokenAsync(refreshToken);
     }
 
-    public Task<bool> RevokeTokenAsync(string refreshToken)
+    public async Task<bool> RevokeTokenAsync(string refreshToken)
     {
-        throw new NotImplementedException();
+        return await _tokenService.RevokeTokenAsync(refreshToken);
     }
 
     public Task<bool> ConfirmEmailAsync(ConfirmEmailRequest request)
