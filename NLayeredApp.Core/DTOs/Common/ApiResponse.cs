@@ -24,6 +24,11 @@ public record ApiResponse<T>
     {
         return new ApiResponse<T>(false, message, default(T), errors);
     }
+
+    public static ApiResponse<T> ErrorResponse(List<string> errors)
+    {
+        return new ApiResponse<T>(false, null, default(T), errors);
+    }
 }
 
 public record ApiResponse
@@ -49,5 +54,10 @@ public record ApiResponse
     public static ApiResponse ErrorResponse(string message, List<string>? errors = null)
     {
         return new ApiResponse(false, message, null, errors);
+    }
+
+    public static ApiResponse ErrorResponse(List<string> errors)
+    {
+        return new ApiResponse(false, null, null, errors);
     }
 }
