@@ -172,9 +172,14 @@ public class AuthService : IAuthService
         return await _tokenService.RevokeTokenAsync(refreshToken);
     }
 
-    public Task<bool> ConfirmEmailAsync(ConfirmEmailRequest request)
+    public async Task<bool> ConfirmEmailAsync(ConfirmEmailRequest request)
     {
-        throw new NotImplementedException();
+        var user = await _userManager.FindByEmailAsync(request.Email);
+        if (user == null)
+            return false;
+
+        var result = await _userManager.ConfirmEmailAsync(user, request.Token);
+        return result.Succeeded;
     }
 
     public Task<bool> ForgotPasswordAsync(ForgotPasswordRequest request)
