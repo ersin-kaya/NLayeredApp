@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NLayeredApp.Core.Constants;
 using NLayeredApp.Core.DTOs.Common;
 using NLayeredApp.Core.DTOs.Identity;
 using NLayeredApp.Core.DTOs.Identity.Requests;
-using NLayeredApp.Core.DTOs.Identity.Responses;
 using NLayeredApp.Core.Interfaces.Services.Auth;
 using NLayeredApp.Core.Interfaces.Services.Identity;
 using NLayeredApp.DataAccess.Identity;
@@ -82,9 +82,30 @@ public class UserService : IUserService
         return new PagedResponse<UserDto>(userDtos, totalCount, pageNumber, pageSize);
     }
 
-    public Task<UserResponse> CreateAsync(CreateUserRequest request)
+    public async Task<ApiResponse<UserDto?>> CreateAsync(CreateUserRequest request)
     {
-        throw new NotImplementedException();
+        var user = new ApplicationUser
+        {
+            UserName = request.Username,
+            Email = request.Email,
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            CreatedAt = DateTimeOffset.Now,
+            CreatedBy = _currentUserService?.UserId?.ToString() ?? "System"
+        };
+        
+        var result = await _userManager.CreateAsync(user, request.Password);
+        if (!result.Succeeded)
+        {
+            return ApiResponse<UserDto?>.ErrorResponse(result.Errors.Select(e => e.Description).ToList());
+        }
+
+        if (request.Roles?.Any() == true)
+        {
+            await _userManager.AddToRolesAsync(user, request.Roles);
+        }
+        
+        return ApiResponse<UserDto?>.SuccessResponse(await MapToDto(user), Messages.User.Success.Created);
     }
 
     public Task<ApiResponse> UpdateAsync(int id, UpdateUserRequest request)
