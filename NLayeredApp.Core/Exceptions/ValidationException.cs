@@ -6,11 +6,11 @@ public class ValidationException : Exception
 {
     public List<string> Errors { get; }
 
-    public ValidationException(string error) : this(Messages.Error.ValidationFailed, new List<string> { error })
+    public ValidationException(string error) : this(Messages.General.Error.ValidationFailed, new List<string> { error })
     {
     }
 
-    public ValidationException(List<string> errors) : this(Messages.Error.ValidationFailed, errors)
+    public ValidationException(List<string> errors) : this(Messages.General.Error.ValidationFailed, errors)
     {
     }
 
