@@ -22,11 +22,9 @@ public static class ApplicationConstants
     
     public static class AuditFields
     {
-        private const int UserNameMaxLength = 100;
-        
-        public const int CreatedByMaxLength = UserNameMaxLength;
-        public const int LastModifiedByMaxLength = UserNameMaxLength;
-        public const int DeletedByMaxLength = UserNameMaxLength;
+        public const int CreatedByMaxLength = 50;
+        public const int LastModifiedByMaxLength = 50;
+        public const int DeletedByMaxLength = 50;
     }
 
     public static class Identity
