@@ -22,7 +22,7 @@ public class AuditableEntityInterceptor : SaveChangesInterceptor
         var context = eventData.Context;
         if (context == null) return result;
         
-        var currentUsername = _currentUserService?.Username ?? "system";
+        var currentUserId = _currentUserService?.UserId?.ToString() ?? "System";
         var currentTime = DateTimeOffset.UtcNow;
 
         foreach (var entry in context.ChangeTracker.Entries<AuditableEntity>())
@@ -30,12 +30,12 @@ public class AuditableEntityInterceptor : SaveChangesInterceptor
             if (entry.State == EntityState.Added)
             {
                 entry.Entity.CreatedAt = currentTime;
-                entry.Entity.CreatedBy = currentUsername;
+                entry.Entity.CreatedBy = currentUserId;
             }
             else if (entry.State == EntityState.Modified)
             {
                 entry.Entity.LastModifiedAt = currentTime;
-                entry.Entity.LastModifiedBy = currentUsername;
+                entry.Entity.LastModifiedBy = currentUserId;
             }
         }
         

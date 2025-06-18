@@ -22,7 +22,7 @@ public class SoftDeleteInterceptor : SaveChangesInterceptor
         var context = eventData.Context;
         if (context == null) return result;
         
-        var currentUsername = _currentUserService?.Username ?? "system";
+        var currentUserId = _currentUserService?.UserId?.ToString() ?? "System";
         var currentTime = DateTimeOffset.UtcNow;
         
         foreach (var entry in context.ChangeTracker.Entries<ISoftDeletable>())
@@ -32,7 +32,7 @@ public class SoftDeleteInterceptor : SaveChangesInterceptor
                 entry.State = EntityState.Modified;
                 entry.Entity.IsDeleted = true;
                 entry.Entity.DeletedAt = currentTime;
-                entry.Entity.DeletedBy = currentUsername;
+                entry.Entity.DeletedBy = currentUserId;
             }
         }
 
