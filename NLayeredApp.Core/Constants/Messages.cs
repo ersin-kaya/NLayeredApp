@@ -29,6 +29,7 @@ public static class Messages
             public const string Created = "User created successfully.";
             public const string Updated = "User updated successfully.";
             public const string Deleted = "User deleted successfully.";
+            public const string PasswordChanged = "Password changed successfully.";
         }
 
         public static class Error

@@ -135,9 +135,19 @@ public class UserService : IUserService
         return ApiResponse.SuccessResponse(Messages.User.Success.Deleted);
     }
 
-    public Task<ApiResponse> ChangePasswordAsync(int id, ChangePasswordRequest request)
+    public async Task<ApiResponse> ChangePasswordAsync(int id, ChangePasswordRequest request)
     {
-        throw new NotImplementedException();
+        var user = await _userManager.FindByIdAsync(id.ToString());
+        if (user == null || user.IsDeleted)
+            return ApiResponse.ErrorResponse(Messages.User.Error.NotFound);
+        
+        var result = await _userManager.ChangePasswordAsync(user, request.CurrentPassword, request.NewPassword);
+        if (!result.Succeeded)
+        {
+            return ApiResponse.ErrorResponse(result.Errors.Select(e => e.Description).ToList());
+        }
+        
+        return ApiResponse.SuccessResponse(Messages.User.Success.PasswordChanged);
     }
 
     public Task<IEnumerable<string>> GetRolesAsync(int userId)
