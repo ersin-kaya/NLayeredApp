@@ -101,9 +101,23 @@ public class UserService : IUserService
         return ApiResponse<UserDto?>.SuccessResponse(await MapToDto(user), Messages.User.Success.Created);
     }
 
-    public Task<ApiResponse> UpdateAsync(int id, UpdateUserRequest request)
+    public async Task<ApiResponse> UpdateAsync(int id, UpdateUserRequest request)
     {
-        throw new NotImplementedException();
+        var user = await _userManager.FindByIdAsync(id.ToString());
+        if (user == null || user.IsDeleted)
+            return ApiResponse.ErrorResponse(Messages.User.Error.NotFound);
+        
+        user.FirstName = request.FirstName;
+        user.LastName = request.LastName;
+        user.IsActive = request.IsActive;
+        
+        var result = await _userManager.UpdateAsync(user);
+        if (!result.Succeeded)
+        {
+            return ApiResponse.ErrorResponse(result.Errors.Select(e => e.Description).ToList());
+        }
+        
+        return ApiResponse.SuccessResponse(Messages.User.Success.Updated);
     }
 
     public Task<ApiResponse> DeleteAsync(int id)
