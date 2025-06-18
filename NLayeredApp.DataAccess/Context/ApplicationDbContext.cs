@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Entities;
-using NLayeredApp.Core.Interfaces.Services.Auth;
 using NLayeredApp.DataAccess.Configurations.Identity;
 using NLayeredApp.DataAccess.Identity;
 using NLayeredApp.DataAccess.Interceptors;
