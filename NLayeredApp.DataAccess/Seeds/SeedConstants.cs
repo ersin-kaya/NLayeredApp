@@ -5,7 +5,7 @@ public static class SeedConstants
     public static class Common
     {
         public static readonly DateTimeOffset CreatedAt = new(2023, 1, 1, 0, 0, 0, TimeSpan.Zero);
-        public const string CreatedBy = "system";
+        public const string CreatedBy = "System";
         
         public const bool IsActive = true;
     }

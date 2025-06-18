@@ -4,7 +4,6 @@ using NLayeredApp.Core.Constants;
 using NLayeredApp.Core.DTOs.Common;
 using NLayeredApp.Core.DTOs.Identity;
 using NLayeredApp.Core.DTOs.Identity.Requests;
-using NLayeredApp.Core.Interfaces.Services.Auth;
 using NLayeredApp.Core.Interfaces.Services.Identity;
 using NLayeredApp.DataAccess.Identity;
 
@@ -13,14 +12,10 @@ namespace NLayeredApp.API.Services;
 public class UserService : IUserService
 {
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly ICurrentUserService _currentUserService;
 
-    public UserService(
-        UserManager<ApplicationUser> userManager,
-        ICurrentUserService currentUserService)
+    public UserService(UserManager<ApplicationUser> userManager)
     {
         _userManager = userManager;
-        _currentUserService = currentUserService;
     }
     
     public async Task<UserDto?> GetByIdAsync(int id)
@@ -89,9 +84,7 @@ public class UserService : IUserService
             UserName = request.Username,
             Email = request.Email,
             FirstName = request.FirstName,
-            LastName = request.LastName,
-            CreatedAt = DateTimeOffset.Now,
-            CreatedBy = _currentUserService?.UserId?.ToString() ?? "System"
+            LastName = request.LastName
         };
         
         var result = await _userManager.CreateAsync(user, request.Password);
