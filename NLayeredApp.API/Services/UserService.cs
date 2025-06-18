@@ -150,9 +150,13 @@ public class UserService : IUserService
         return ApiResponse.SuccessResponse(Messages.User.Success.PasswordChanged);
     }
 
-    public Task<IEnumerable<string>> GetRolesAsync(int userId)
+    public async Task<IEnumerable<string>> GetRolesAsync(int userId)
     {
-        throw new NotImplementedException();
+        var user = await _userManager.FindByIdAsync(userId.ToString());
+        if (user == null || user.IsDeleted)
+            return Enumerable.Empty<string>();
+        
+        return await _userManager.GetRolesAsync(user);
     }
 
     public Task<ApiResponse> AddToRoleAsync(int userId, string role)
