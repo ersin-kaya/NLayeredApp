@@ -120,9 +120,19 @@ public class UserService : IUserService
         return ApiResponse.SuccessResponse(Messages.User.Success.Updated);
     }
 
-    public Task<ApiResponse> DeleteAsync(int id)
+    public async Task<ApiResponse> DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var user = await _userManager.FindByIdAsync(id.ToString());
+        if (user == null || user.IsDeleted)
+            return ApiResponse.ErrorResponse(Messages.User.Error.NotFound);
+        
+        var result = await _userManager.UpdateAsync(user);
+        if (!result.Succeeded)
+        {
+            return ApiResponse.ErrorResponse(result.Errors.Select(e => e.Description).ToList());
+        }
+        
+        return ApiResponse.SuccessResponse(Messages.User.Success.Deleted);
     }
 
     public Task<ApiResponse> ChangePasswordAsync(int id, ChangePasswordRequest request)
