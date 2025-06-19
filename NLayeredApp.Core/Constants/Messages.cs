@@ -39,6 +39,7 @@ public static class Messages
             public const string NotFound = "User not found.";
             public const string EmailExists = "Email already exists.";
             public const string InvalidCredentials = "Invalid email or password.";
+            public const string InvalidUser = "Invalid user.";
         }
 
         public static class Validation
