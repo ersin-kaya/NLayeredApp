@@ -51,6 +51,11 @@ public record ApiResponse
         return new ApiResponse(true, message, data);
     }
 
+    public static ApiResponse SuccessResponse(string message)
+    {
+        return new ApiResponse(true, message, null);
+    }
+
     public static ApiResponse ErrorResponse(string message, List<string>? errors = null)
     {
         return new ApiResponse(false, message, null, errors);

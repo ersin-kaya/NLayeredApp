@@ -159,9 +159,19 @@ public class UserService : IUserService
         return await _userManager.GetRolesAsync(user);
     }
 
-    public Task<ApiResponse> AddToRoleAsync(int userId, string role)
+    public async Task<ApiResponse> AddToRoleAsync(int userId, string role)
     {
-        throw new NotImplementedException();
+        var user = await _userManager.FindByIdAsync(userId.ToString());
+        if (user == null || user.IsDeleted)
+            return ApiResponse.ErrorResponse(Messages.User.Error.NotFound);
+        
+        var result = await _userManager.AddToRoleAsync(user, role);
+        if (!result.Succeeded)
+        {
+            return ApiResponse.ErrorResponse(result.Errors.Select(e => e.Description).ToList());
+        }
+        
+        return ApiResponse.SuccessResponse(string.Format(Messages.User.Success.AddedToRole, role));
     }
 
     public Task<ApiResponse> RemoveFromRoleAsync(int userId, string role)
