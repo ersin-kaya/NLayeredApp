@@ -23,7 +23,7 @@ public class UserService : IUserService
         var user  = await _userManager.FindByIdAsync(id.ToString());
         if (user == null || user.IsDeleted) return null;
         
-        return await MapToDto(user);
+        return await MapToDtoAsync(user);
     }
 
     public async Task<UserDto?> GetByEmailAsync(string email)
@@ -31,7 +31,7 @@ public class UserService : IUserService
         var user = await _userManager.FindByEmailAsync(email);
         if (user == null || user.IsDeleted) return null;
         
-        return await MapToDto(user);
+        return await MapToDtoAsync(user);
     }
 
     public async Task<UserDto?> GetByUsernameAsync(string username)
@@ -39,7 +39,7 @@ public class UserService : IUserService
         var user = await _userManager.FindByNameAsync(username);
         if (user == null || user.IsDeleted) return null;
         
-        return await MapToDto(user);
+        return await MapToDtoAsync(user);
     }
 
     public async Task<IEnumerable<UserDto>> GetAllAsync()
@@ -52,7 +52,7 @@ public class UserService : IUserService
         var userDtos = new List<UserDto>();
         foreach (var user in users)
         {
-            userDtos.Add(await MapToDto(user));
+            userDtos.Add(await MapToDtoAsync(user));
         }
         return userDtos;
     }
@@ -71,7 +71,7 @@ public class UserService : IUserService
         var userDtos = new List<UserDto>();
         foreach (var user in users)
         {
-            userDtos.Add(await MapToDto(user));
+            userDtos.Add(await MapToDtoAsync(user));
         }
 
         return new PagedResponse<UserDto>(userDtos, totalCount, pageNumber, pageSize);
@@ -98,7 +98,7 @@ public class UserService : IUserService
             await _userManager.AddToRolesAsync(user, request.Roles);
         }
         
-        return ApiResponse<UserDto?>.SuccessResponse(await MapToDto(user), Messages.User.Success.Created);
+        return ApiResponse<UserDto?>.SuccessResponse(await MapToDtoAsync(user), Messages.User.Success.Created);
     }
 
     public async Task<ApiResponse> UpdateAsync(int id, UpdateUserRequest request)
@@ -187,5 +187,22 @@ public class UserService : IUserService
         }
         
         return ApiResponse.SuccessResponse(string.Format(Messages.User.Success.RemovedFromRole, role));
+    }
+
+    private async Task<UserDto> MapToDtoAsync(ApplicationUser user)
+    {
+        var roles = await _userManager.GetRolesAsync(user);
+        return new UserDto
+        {
+            Id = user.Id,
+            Username = user.UserName,
+            Email = user.Email,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            IsActive = user.IsActive,
+            EmailConfirmed = user.EmailConfirmed,
+            CreatedAt = user.CreatedAt,
+            Roles = roles.ToList()
+        };
     }
 }
