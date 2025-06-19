@@ -2,12 +2,16 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using NLayeredApp.Core.Interfaces.Repositories;
 using NLayeredApp.Core.Interfaces.UnitOfWork;
+using NLayeredApp.Core.Settings;
 using NLayeredApp.DataAccess.Context;
 using NLayeredApp.DataAccess.Interceptors;
 using NLayeredApp.DataAccess.Repositories;
 using NLayeredApp.DataAccess.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configuration
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
 // Add services to the container.
 
