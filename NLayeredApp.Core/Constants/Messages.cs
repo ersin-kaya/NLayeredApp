@@ -30,8 +30,8 @@ public static class Messages
             public const string Updated = "User updated successfully.";
             public const string Deleted = "User deleted successfully.";
             public const string PasswordChanged = "Password changed successfully.";
-            
             public const string AddedToRole = "User added to {0} role successfully.";
+            public const string RemovedFromRole = "User removed from {0} role successfully.";
         }
 
         public static class Error
