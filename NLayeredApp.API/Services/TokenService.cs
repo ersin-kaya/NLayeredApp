@@ -70,9 +70,32 @@ public class TokenService : ITokenService
         };
     }
 
-    public Task<string?> ValidateTokenAsync(string token)
+    public string? ValidateToken(string token)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_jwtSettings.Key);
+
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = true,
+                ValidIssuer = _jwtSettings.Issuer,
+                ValidateAudience = true,
+                ValidAudience = _jwtSettings.Audience,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero
+            };
+            
+            var principal = tokenHandler.ValidateToken(token, validationParameters, out _);
+            return principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     public Task<RefreshToken> GenerateRefreshTokenAsync(int userId)

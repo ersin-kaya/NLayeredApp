@@ -6,7 +6,7 @@ namespace NLayeredApp.Core.Interfaces.Services.Auth;
 public interface ITokenService
 {
     Task<RefreshTokenResponse> GenerateTokenAsync(IApplicationUser user);
-    Task<string?> ValidateTokenAsync(string token);
+    string? ValidateToken(string token);
     Task<RefreshToken> GenerateRefreshTokenAsync(int userId);
     Task<bool> ValidateRefreshTokenAsync(string refreshToken);
     Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken);
