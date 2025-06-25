@@ -40,6 +40,9 @@ public static class Messages
             public const string EmailExists = "Email already exists.";
             public const string InvalidCredentials = "Invalid email or password.";
             public const string InvalidUser = "Invalid user.";
+            public const string InvalidRefreshToken = "Invalid refresh token.";
+            public const string InvalidOrExpiredRefreshToken = "Invalid or expired refresh token.";
+
         }
 
         public static class Validation
