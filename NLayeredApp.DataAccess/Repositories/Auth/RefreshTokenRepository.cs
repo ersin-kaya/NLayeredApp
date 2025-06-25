@@ -19,7 +19,7 @@ public class RefreshTokenRepository : GenericRepository<RefreshToken>, IRefreshT
     public async Task<IEnumerable<RefreshToken>> GetActiveTokensByUserIdAsync(int userId)
     {
         return await _dbSet
-            .Where(rt => rt.UserId == userId && !rt.IsRevoked && rt.ExpiresAt > DateTime.UtcNow)
+            .Where(rt => rt.UserId == userId && !rt.IsRevoked && rt.ExpiresAt > DateTimeOffset.UtcNow)
             .ToListAsync();
     }
 
@@ -29,7 +29,7 @@ public class RefreshTokenRepository : GenericRepository<RefreshToken>, IRefreshT
         foreach (var token in tokens)
         {
             token.IsRevoked = true;
-            token.RevokedAt = DateTime.UtcNow;
+            token.RevokedAt = DateTimeOffset.UtcNow;
         }
     }
 }
