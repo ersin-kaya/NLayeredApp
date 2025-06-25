@@ -149,9 +149,17 @@ public class TokenService : ITokenService
         return await GenerateTokenAsync(user);
     }
 
-    public Task<bool> RevokeTokenAsync(string refreshToken)
+    public async Task<bool> RevokeTokenAsync(string refreshToken)
     {
-        throw new NotImplementedException();
+        var token = await _unitOfWork.RefreshTokens.GetByTokenAsync(refreshToken);
+
+        if (token == null) return false;
+        
+        token.IsRevoked = true;
+        token.RevokedAt = DateTimeOffset.UtcNow;
+        
+        await _unitOfWork.SaveChangesAsync();
+        return true;
     }
 
     public Task<bool> RevokeAllUserTokensAsync(int userId)
