@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using NLayeredApp.Core.Constants;
 using NLayeredApp.Core.DTOs.Auth.Responses;
 using NLayeredApp.Core.Entities.Identity;
+using NLayeredApp.Core.Exceptions;
 using NLayeredApp.Core.Interfaces.Services.Auth;
 using NLayeredApp.Core.Interfaces.UnitOfWork;
 using NLayeredApp.Core.Settings;
@@ -125,9 +126,27 @@ public class TokenService : ITokenService
         return token != null && !token.IsRevoked && token.ExpiresAt > DateTimeOffset.UtcNow;
     }
 
-    public Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken)
+    public async Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken)
     {
-        throw new NotImplementedException();
+        var token = await _unitOfWork.RefreshTokens.GetByTokenAsync(refreshToken);
+        
+        if (token == null || token.IsRevoked || token.ExpiresAt <= DateTimeOffset.UtcNow)
+        {
+            throw new InvalidRefreshTokenException();
+        }
+        
+        var user = await _userManager.FindByIdAsync(token.UserId.ToString());
+        if (user == null)
+        {
+            throw new NotFoundException(nameof(ApplicationUser), token.UserId);
+        }
+        
+        // Revoke old token
+        token.IsRevoked = true;
+        token.RevokedAt = DateTimeOffset.UtcNow;
+        await _unitOfWork.SaveChangesAsync();
+
+        return await GenerateTokenAsync(user);
     }
 
     public Task<bool> RevokeTokenAsync(string refreshToken)
