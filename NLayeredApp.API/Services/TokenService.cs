@@ -162,9 +162,11 @@ public class TokenService : ITokenService
         return true;
     }
 
-    public Task<bool> RevokeAllUserTokensAsync(int userId)
+    public async Task<bool> RevokeAllUserTokensAsync(int userId)
     {
-        throw new NotImplementedException();
+        await _unitOfWork.RefreshTokens.RevokeAllUserTokensAsync(userId);
+        await _unitOfWork.SaveChangesAsync();
+        return true;
     }
 
     private string GenerateRefreshTokenString()
