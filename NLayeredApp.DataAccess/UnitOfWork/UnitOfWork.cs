@@ -11,7 +11,7 @@ namespace NLayeredApp.DataAccess.UnitOfWork;
 public class UnitOfWork : IUnitOfWork
 {
     private readonly ApplicationDbContext _context;
-    private IDbContextTransaction _transaction;
+    private IDbContextTransaction? _transaction;
 
     private ICategoryRepository? _categories;
     private IProductRepository? _products;
@@ -21,7 +21,6 @@ public class UnitOfWork : IUnitOfWork
     {
         _context = context;
     }
-
     
     public ICategoryRepository Categories => _categories ??= new CategoryRepository(_context);
     public IProductRepository Products => _products ??= new ProductRepository(_context);
@@ -42,7 +41,10 @@ public class UnitOfWork : IUnitOfWork
         try
         {
             await SaveChangesAsync();
-            await _transaction?.CommitAsync();
+            if (_transaction != null)
+            {
+                await _transaction.CommitAsync();
+            }
         }
         catch
         {
