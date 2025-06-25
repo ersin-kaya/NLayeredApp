@@ -119,9 +119,10 @@ public class TokenService : ITokenService
         return refreshToken;
     }
 
-    public Task<bool> ValidateRefreshTokenAsync(string refreshToken)
+    public async Task<bool> ValidateRefreshTokenAsync(string refreshToken)
     {
-        throw new NotImplementedException();
+        var token = await _unitOfWork.RefreshTokens.GetByTokenAsync(refreshToken);
+        return token != null && !token.IsRevoked && token.ExpiresAt > DateTimeOffset.UtcNow;
     }
 
     public Task<RefreshTokenResponse> RefreshTokenAsync(string refreshToken)
