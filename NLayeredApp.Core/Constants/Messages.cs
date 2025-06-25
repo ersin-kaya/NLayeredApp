@@ -52,6 +52,21 @@ public static class Messages
         }
     }
     
+    public static class Role
+    {
+        public static class Success
+        {
+            public const string Created = "Role created successfully.";
+            public const string Updated = "Role updated successfully.";
+            public const string Deleted = "Role deleted successfully.";
+        }
+
+        public static class Error
+        {
+            public const string NotFound = "Role not found.";
+        }
+    }
+    
     public static class Category
     {
         public static class Success
